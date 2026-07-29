@@ -1217,7 +1217,11 @@ section {
 </div>
 
 <script>
+const SUPABASE_URL =
+  "https://grihylarnngutarlezdm.supabase.co";
 
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_Bbz2Ivx4EZ5GljQx1RFGVw_Ktag4lN0";
 function openConsultationModal() {
   document.getElementById("consultationModal").style.display = "block";
 }
@@ -1351,6 +1355,21 @@ window.onclick = function(event) {
 };
 
 </script>
+<!-- Feedback Menu -->
+<div id="feedbackMenu" class="feedback-menu">
+  <div class="feedback-menu-content">
+    <span class="close-btn" onclick="closeFeedbackMenu()">&times;</span>
 
+    <h2>Feedbacks</h2>
+
+    <button class="feedback-option" onclick="openGiveFeedback()">
+      ✍️ Give Feedback
+    </button>
+
+    <button class="feedback-option" onclick="openSeeFeedbacks()">
+      👀 See Feedbacks
+    </button>
+  </div>
+</div>
 </body>
 </html>
