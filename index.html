@@ -168,6 +168,8 @@ nav a {
   font-weight: 700;
   box-shadow: 0 0 25px rgba(124,58,237,.45);
   transition: .3s;
+  cursor: pointer;
+  border: none;
 }
 
 .btn:hover {
@@ -647,7 +649,8 @@ section { padding: 120px 7%; }
       <a href="https://www.instagram.com/xplo.ra4/" target="_blank" rel="noopener noreferrer">📷 xplo.ra4</a>
     </div>
   </div>
-  <button class="btn" onclick="openConsultationModal()">Book a Consultation 📝</button>
+  <!-- Removed inline onclick and attached via event listener in script -->
+  <button id="openModalBtn" class="btn">Book a Consultation 📝</button>
 </section>
 
 <div class="animated-end"></div>
@@ -660,9 +663,9 @@ section { padding: 120px 7%; }
 <!-- Consultation Form Modal -->
 <div id="consultationModal" class="consultation-modal">
     <div class="modal-content">
-        <span class="close-btn" onclick="closeConsultationModal()">&times;</span>
+        <span id="closeModalBtn" class="close-btn">&times;</span>
         <h2>Book a Consultation</h2>
-        <form id="consultationForm" onsubmit="sendToWhatsApp(event)">
+        <form id="consultationForm">
             
             <label>Name *</label>
             <input type="text" id="c_name" required>
@@ -671,7 +674,7 @@ section { padding: 120px 7%; }
             <input type="number" id="c_age" required>
 
             <label>Educational Qualification *</label>
-            <select id="c_education" onchange="toggleEducationGroup()" required>
+            <select id="c_education" required>
                 <option value="">Select Qualification</option>
                 <option value="Below 10th">Below 10th</option>
                 <option value="10th Standard">10th Standard</option>
@@ -719,69 +722,91 @@ section { padding: 120px 7%; }
 </div>
 
 <script>
-  function openConsultationModal() {
-    document.getElementById('consultationModal').style.display = 'block';
-  }
-
-  function closeConsultationModal() {
-    document.getElementById('consultationModal').style.display = 'none';
-  }
-
-  function toggleEducationGroup() {
-    const edu = document.getElementById('c_education').value;
-    const groupContainer = document.getElementById('groupFieldContainer');
-    if (edu === 'Undergraduate' || edu === 'Postgraduate' || edu === 'Other') {
-        groupContainer.style.display = 'block';
-        document.getElementById('c_group').required = true;
-    } else {
-        groupContainer.style.display = 'none';
-        document.getElementById('c_group').required = false;
-    }
-  }
-
-  function sendToWhatsApp(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('c_name').value;
-    const age = document.getElementById('c_age').value;
-    const education = document.getElementById('c_education').value;
-    const group = document.getElementById('c_group').value;
-    const domain = document.getElementById('c_domain').value || 'N/A';
-    const department = document.getElementById('c_department').value || 'N/A';
-    const govExams = document.getElementById('c_govexams').value;
-    const address = document.getElementById('c_address').value;
-    const phone = document.getElementById('c_phone').value;
-    const message = document.getElementById('c_message').value || 'N/A';
-
-    let text = *New Consultation Request* 📝\n\n +
-               *Name:* ${name}\n +
-               *Age:* ${age}\n +
-               *Education:* ${education};
-    
-    if (group) {
-        text += \n*Group/Major:* ${group};
-    }
-
-    text += \n*Interested Domain:* ${domain}\n +
-            *Department:* ${department}\n +
-            *Govt Exams Interest:* ${govExams}\n +
-            *Address:* ${address}\n +
-            *Phone:* ${phone}\n +
-            *Words:* ${message};
-
-    const encodedText = encodeURIComponent(text);
-    const whatsappUrl = https://wa.me/8807663840?text=${encodedText};
-    
-    window.open(whatsappUrl, '_blank');
-    closeConsultationModal();
-  }
-
-  window.onclick = function(event) {
+  document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('consultationModal');
-    if (event.target == modal) {
-        closeConsultationModal();
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+    const eduSelect = document.getElementById('c_education');
+    const groupContainer = document.getElementById('groupFieldContainer');
+    const groupInput = document.getElementById('c_group');
+    const form = document.getElementById('consultationForm');
+
+    // Open Modal
+    if (openBtn) {
+      openBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'block';
+      });
     }
-  }
+
+    // Close Modal via 'X'
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+    }
+
+    // Close Modal when clicking outside content
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    // Toggle Group Field visibility
+    if (eduSelect) {
+      eduSelect.addEventListener('change', function() {
+        const edu = this.value;
+        if (edu === 'Undergraduate' || edu === 'Postgraduate' || edu === 'Other') {
+          groupContainer.style.display = 'block';
+          groupInput.required = true;
+        } else {
+          groupContainer.style.display = 'none';
+          groupInput.required = false;
+        }
+      });
+    }
+
+    // Handle Form Submit and WhatsApp Redirect
+    if (form) {
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('c_name').value;
+        const age = document.getElementById('c_age').value;
+        const education = eduSelect.value;
+        const group = groupInput.value;
+        const domain = document.getElementById('c_domain').value || 'N/A';
+        const department = document.getElementById('c_department').value || 'N/A';
+        const govExams = document.getElementById('c_govexams').value;
+        const address = document.getElementById('c_address').value;
+        const phone = document.getElementById('c_phone').value;
+        const message = document.getElementById('c_message').value || 'N/A';
+
+        let text = *New Consultation Request* 📝\n\n +
+                   *Name:* ${name}\n +
+                   *Age:* ${age}\n +
+                   *Education:* ${education};
+        
+        if (group) {
+            text += \n*Group/Major:* ${group};
+        }
+
+        text += \n*Interested Domain:* ${domain}\n +
+                *Department:* ${department}\n +
+                *Govt Exams Interest:* ${govExams}\n +
+                *Address:* ${address}\n +
+                *Phone:* ${phone}\n +
+                *Words:* ${message};
+
+        const encodedText = encodeURIComponent(text);
+        const whatsappUrl = https://wa.me/8807663840?text=${encodedText};
+        
+        window.open(whatsappUrl, '_blank');
+        modal.style.display = 'none';
+      });
+    }
+  });
 </script>
 
 </body>
