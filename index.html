@@ -522,6 +522,71 @@ footer p { color: #888; font-size: 13px; }
     gap: 20px;
   }
 }
+  /* Modal Styling */
+.consultation-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+.modal-content {
+    background-color: #121212;
+    color: #e9d5ff;
+    margin: 5% auto;
+    padding: 30px;
+    border: 1px solid #333;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-btn:hover { color: #fff; }
+.consultation-modal label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.consultation-modal input, 
+.consultation-modal select, 
+.consultation-modal textarea {
+    width: 100%;
+    padding: 10px;
+    background: #1e1e1e;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.submit-whatsapp-btn {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.submit-whatsapp-btn:hover { background-color: #20ba5a; }
 </style>
 </head>
 
@@ -639,7 +704,7 @@ footer p { color: #888; font-size: 13px; }
       <a href="https://www.instagram.com/xplo.ra4/" target="_blank" rel="noopener noreferrer">📷 xplo.ra4</a>
     </div>
   </div>
-  <a href="mailto:your-email@gmail.com" class="btn">Book a Consultation ↗️</a>
+  <button class="btn" onclick="openConsultationModal()">Book a Consultation 📝</button>
 </section>
 
 <div class="animated-end"></div>
@@ -648,6 +713,132 @@ footer p { color: #888; font-size: 13px; }
   <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c084fc; text-shadow: 0 0 8px rgba(192,132,252,.3);">Developed by HARISH.V</div>
   <div style="margin-top: 4px; font-weight: 500; color: #e9d5ff;">Contact: 8438008759</div>
 </div>
+<!-- Consultation Form Modal -->
+<div id="consultationModal" class="consultation-modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeConsultationModal()">&times;</span>
+        <h2>Book a Consultation</h2>
+        <form id="consultationForm" onsubmit="sendToWhatsApp(event)">
+            
+            <label>Name *</label>
+            <input type="text" id="c_name" required>
 
+            <label>Age *</label>
+            <input type="number" id="c_age" required>
+
+            <label>Educational Qualification *</label>
+            <select id="c_education" onchange="toggleEducationGroup()" required>
+                <option value="">Select Qualification</option>
+                <option value="Below 10th">Below 10th</option>
+                <option value="10th Standard">10th Standard</option>
+                <option value="12th Standard">12th Standard</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Postgraduate">Postgraduate</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <div id="groupFieldContainer" style="display: none;">
+                <label>If > 12th, Mention Group/Major Studied *</label>
+                <input type="text" id="c_group">
+            </div>
+
+            <label>Interested Domain (Optional)</label>
+            <select id="c_domain">
+                <option value="">Select Domain</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Nursing">Nursing</option>
+                <option value="Arts and Science">Arts and Science</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label>Department in Interest</label>
+            <input type="text" id="c_department" placeholder="e.g., Computer Science, B.Sc Mathematics">
+
+            <label>Interest in Government Exams?</label>
+            <select id="c_govexams">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <label>Address *</label>
+            <textarea id="c_address" rows="2" required></textarea>
+
+            <label>Phone Number *</label>
+            <input type="tel" id="c_phone" required>
+
+            <label>Say Your Words (Paragraph)</label>
+            <textarea id="c_message" rows="3" placeholder="Tell us about your goals or questions..."></textarea>
+
+            <button type="submit" class="submit-whatsapp-btn">Send via WhatsApp 🚀</button>
+        </form>
+    </div>
+</div>
+<script>
+  function openConsultationModal() {
+    document.getElementById('consultationModal').style.display = 'block';
+}
+
+function closeConsultationModal() {
+    document.getElementById('consultationModal').style.display = 'none';
+}
+
+function toggleEducationGroup() {
+    const edu = document.getElementById('c_education').value;
+    const groupContainer = document.getElementById('groupFieldContainer');
+    // Show group field if Undergraduate, Postgraduate, or Other (greater than 12th)
+    if (edu === 'Undergraduate' || edu === 'Postgraduate' || edu === 'Other') {
+        groupContainer.style.display = 'block';
+        document.getElementById('c_group').required = true;
+    } else {
+        groupContainer.style.display = 'none';
+        document.getElementById('c_group').required = false;
+    }
+}
+
+function sendToWhatsApp(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('c_name').value;
+    const age = document.getElementById('c_age').value;
+    const education = document.getElementById('c_education').value;
+    const group = document.getElementById('c_group').value;
+    const domain = document.getElementById('c_domain').value || 'N/A';
+    const department = document.getElementById('c_department').value || 'N/A';
+    const govExams = document.getElementById('c_govexams').value;
+    const address = document.getElementById('c_address').value;
+    const phone = document.getElementById('c_phone').value;
+    const message = document.getElementById('c_message').value || 'N/A';
+
+    let text = *New Consultation Request* 📝\n\n +
+               *Name:* ${name}\n +
+               *Age:* ${age}\n +
+               *Education:* ${education};
+    
+    if (group) {
+        text += \n*Group/Major:* ${group};
+    }
+
+    text += \n*Interested Domain:* ${domain}\n +
+            *Department:* ${department}\n +
+            *Govt Exams Interest:* ${govExams}\n +
+            *Address:* ${address}\n +
+            *Phone:* ${phone}\n +
+            *Words:* ${message};
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = https://wa.me/8807663840?text=${encodedText};
+    
+    window.open(whatsappUrl, '_blank');
+    closeConsultationModal();
+}
+
+// Close modal if user clicks outside the modal content box
+window.onclick = function(event) {
+    const modal = document.getElementById('consultationModal');
+    if (event.target == modal) {
+        closeConsultationModal();
+    }
+}
+</script> 
 </body>
 </html>
