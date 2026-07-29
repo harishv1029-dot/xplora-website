@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xplora | Build What Comes Next</title>
-
-<style>
+<title>Xplora | Build What Comes Next</title><style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap');
 
 :root {
@@ -19,9 +16,15 @@
   --purple: #8b5cf6;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "DM Sans", Arial, sans-serif;
@@ -145,7 +148,6 @@ nav a {
   background-clip: text;
   color: transparent;
   font-style: italic;
-  text-shadow: 0 0 25px rgba(96,165,250,.35);
 }
 
 .hero p {
@@ -168,8 +170,8 @@ nav a {
   font-weight: 700;
   box-shadow: 0 0 25px rgba(124,58,237,.45);
   transition: .3s;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -179,7 +181,9 @@ nav a {
   box-shadow: 0 0 35px rgba(96,165,250,.7);
 }
 
-section { padding: 120px 7%; }
+section {
+  padding: 120px 7%;
+}
 
 .vision-image {
   margin-top: 30px;
@@ -203,7 +207,9 @@ section { padding: 120px 7%; }
   margin-bottom: 65px;
 }
 
-.section-title .eyebrow { color: #c084fc; }
+.section-title .eyebrow {
+  color: #c084fc;
+}
 
 .section-title h2 {
   font-family: "Playfair Display", Georgia, serif;
@@ -247,7 +253,9 @@ section { padding: 120px 7%; }
   box-shadow: 0 0 30px rgba(124,58,237,.35);
 }
 
-.card:hover p { color: #c4b5fd; }
+.card:hover p {
+  color: #c4b5fd;
+}
 
 .icon {
   font-size: 42px;
@@ -300,7 +308,9 @@ section { padding: 120px 7%; }
   box-shadow: 0 0 25px rgba(139,92,246,.5);
 }
 
-.about-text { flex: 1; }
+.about-text {
+  flex: 1;
+}
 
 .about-text h2 {
   font-family: "Playfair Display", Georgia, serif;
@@ -361,7 +371,10 @@ section { padding: 120px 7%; }
   line-height: .95;
 }
 
-.vision h2 span { color: #c084fc; font-style: italic; }
+.vision h2 span {
+  color: #c084fc;
+  font-style: italic;
+}
 
 .contact {
   background: linear-gradient(135deg, #4c1d95, #1d4ed8, #090014);
@@ -434,12 +447,19 @@ section { padding: 120px 7%; }
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @media(max-width: 800px) {
-  nav { display: none; }
+  nav {
+    display: none;
+  }
 
   .hero {
     min-height: auto;
@@ -448,20 +468,30 @@ section { padding: 120px 7%; }
     align-items: flex-start;
   }
 
-  .hero h1 { letter-spacing: -2px; }
+  .hero h1 {
+    letter-spacing: -2px;
+  }
 
-  .service-grid { grid-template-columns: 1fr; }
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
 
   .about {
     flex-direction: column;
     gap: 60px;
   }
 
-  .about-visual { width: 90%; }
+  .about-visual {
+    width: 90%;
+  }
 
-  .about-text { text-align: center; }
+  .about-text {
+    text-align: center;
+  }
 
-  .stats { justify-content: center; }
+  .stats {
+    justify-content: center;
+  }
 
   .contact {
     flex-direction: column;
@@ -470,344 +500,587 @@ section { padding: 120px 7%; }
 }
 
 /* Modal Styling */
+
 .consultation-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
 }
+
 .modal-content {
-    background-color: #121212;
-    color: #e9d5ff;
-    margin: 5% auto;
-    padding: 30px;
-    border: 1px solid #333;
-    width: 90%;
-    max-width: 550px;
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  background-color: #121212;
+  color: #e9d5ff;
+  margin: 5% auto;
+  padding: 30px;
+  border: 1px solid #333;
+  width: 90%;
+  max-width: 550px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
+
 .close-btn {
-    color: #aaa;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+  color: #aaa;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
-.close-btn:hover { color: #fff; }
+
+.close-btn:hover {
+  color: #fff;
+}
+
 .consultation-modal label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 500;
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
 }
-.consultation-modal input, 
-.consultation-modal select, 
+
+.consultation-modal input,
+.consultation-modal select,
 .consultation-modal textarea {
-    width: 100%;
-    padding: 10px;
-    background: #1e1e1e;
-    border: 1px solid #444;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 14px;
+  width: 100%;
+  padding: 10px;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 14px;
 }
+
 .submit-whatsapp-btn {
-    width: 100%;
-    margin-top: 20px;
-    background-color: #25D366;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
-.submit-whatsapp-btn:hover { background-color: #20ba5a; }
-</style>
-</head>
 
-<body>
-
-<header>
-  <div class="logo">✦ <span>XPLORA</span></div>
-  <nav>
+.submit-whatsapp-btn:hover {
+  background-color: #20ba5a;
+}
+</style></head><body><header>
+  <div class="logo">✦ <span>XPLORA</span></div>  <nav>
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-</header>
+</header><section class="hero">
+  <div class="hero-content"><div class="eyebrow">
+  Entrepreneurship · Strategy · Ambition
+</div>
 
-<section class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">Entrepreneurship · Strategy · Ambition</div>
-    <h1>Build a future<br>worth <span>remembering.</span></h1>
-    <p>
-      The world belongs to people who choose to create. Xplora gives ambitious
-      students, founders and business owners the clarity, strategy and courage
-      to turn a bold idea into a legendary next chapter.
-    </p>
-    <a href="#contact" class="btn">Start Your Journey ↗️</a>
+<h1>
+  Build a future<br>
+  worth <span>remembering.</span>
+</h1>
+
+<p>
+  The world belongs to people who choose to create. Xplora gives ambitious
+  students, founders and business owners the clarity, strategy and courage
+  to turn a bold idea into a legendary next chapter.
+</p>
+
+<a href="#contact" class="btn">
+  Start Your Journey ↗️
+</a>
+
   </div>
-</section>
+</section><section class="services" id="services">  <div class="section-title"><div class="eyebrow">
+  The Xplora Advantage
+</div>
 
-<section class="services" id="services">
-  <div class="section-title">
-    <div class="eyebrow">The Xplora Advantage</div>
-    <h2>One ambition.<br><span>Infinite possibilities.</span></h2>
+<h2>
+  One ambition.<br>
+  <span>Infinite possibilities.</span>
+</h2>
+
+  </div>  <div class="service-grid"><div class="card">
+  <div class="icon">◎</div>
+  <h3>Government Exam Guidance</h3>
+  <p>
+    Strategic guidance for UPSC, TNPSC, SSC, Banking and competitive examinations.
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">↗️</div>
+  <h3>Startup Guidance</h3>
+  <p>
+    Transform your idea into a validated, practical and growth-ready venture.
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">⌘</div>
+  <h3>Business Registration</h3>
+  <p>
+    Navigate MSME, Startup India, Udyam, GST, IEC and company formation with confidence.
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">◇</div>
+  <h3>Idea Validation</h3>
+  <p>
+    Challenge assumptions, understand the market and build on a stronger foundation.
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">◈</div>
+  <h3>Funding & Investors</h3>
+  <p>
+    Prepare your business, pitch and vision for the opportunities that can change everything.
+  </p>
+</div>
+
+<div class="card">
+  <div class="icon">✦</div>
+  <h3>Training & Mentorship</h3>
+  <p>
+    Build skills, confidence and the mindset required to make your next move count.
+  </p>
+</div>
+
   </div>
-
-  <div class="service-grid">
-    <div class="card">
-      <div class="icon">◎</div>
-      <h3>Government Exam Guidance</h3>
-      <p>Strategic guidance for UPSC, TNPSC, SSC, Banking and competitive examinations.</p>
-    </div>
-    <div class="card">
-      <div class="icon">↗️</div>
-      <h3>Startup Guidance</h3>
-      <p>Transform your idea into a validated, practical and growth-ready venture.</p>
-    </div>
-    <div class="card">
-      <div class="icon">⌘</div>
-      <h3>Business Registration</h3>
-      <p>Navigate MSME, Startup India, Udyam, GST, IEC and company formation with confidence.</p>
-    </div>
-    <div class="card">
-      <div class="icon">◇</div>
-      <h3>Idea Validation</h3>
-      <p>Challenge assumptions, understand the market and build on a stronger foundation.</p>
-    </div>
-    <div class="card">
-      <div class="icon">◈</div>
-      <h3>Funding & Investors</h3>
-      <p>Prepare your business, pitch and vision for the opportunities that can change everything.</p>
-    </div>
-    <div class="card">
-      <div class="icon">✦</div>
-      <h3>Training & Mentorship</h3>
-      <p>Build skills, confidence and the mindset required to make your next move count.</p>
-    </div>
-  </div>
-</section>
-
-<section class="about" id="about">
-  <div class="about-visual">
+</section><section class="about" id="about">  <div class="about-visual">
     <img src="image1.png" alt="Muralidharan">
-  </div>
-
-  <div class="about-text">
-    <div class="eyebrow">Meet Your Guide</div>
-    <h2>Ideas are everywhere.<br><span>Direction is rare.</span></h2>
-    <p>
-      I'm Muralidhran, the consultant behind Xplora. I help students, aspiring
-      entrepreneurs and business owners make better decisions with practical
-      guidance, strategic thinking and a clear roadmap.
-    </p>
-    <p>
-      Great journeys are rarely built alone. At Xplora, we believe your future
-      should not be left to chance. Every legendary move starts with the right conversation.
-    </p>
-
-    <div class="stats">
-      <div class="stat"><strong>01</strong><small>Clear Vision</small></div>
-      <div class="stat"><strong>∞</strong><small>Possibilities</small></div>
-      <div class="stat"><strong>100%</strong><small>Commitment</small></div>
-    </div>
-
-    <a href="#contact" class="btn">Let's Talk ↗️</a>
-  </div>
-</section>
-
-<section class="vision">
-  <div class="vision-content">
-    <div class="eyebrow">Your story is still being written</div>
-    <h2>Think bigger.<br><span>Move boldly.</span></h2>
-    <div class="vision-image">
-      <img src="image.png" alt="Muralidharan image">
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div>
-    <h2>Your future is not<br>something to wait for.</h2>
-    <p>Tell us where you want to go. We'll help you find the next step.</p>
-    <div class="contact-details">
-      <a href="tel:+8807663840">📞 +8807663840</a>
-      <a href="https://wa.me/8807663840" target="_blank" rel="noopener noreferrer">💬 +8807663840</a>
-      <a href="https://www.instagram.com/xplo.ra4/" target="_blank" rel="noopener noreferrer">📷 xplo.ra4</a>
-    </div>
-  </div>
-  <!-- Removed inline onclick and attached via event listener in script -->
-  <button id="openModalBtn" class="btn">Book a Consultation 📝</button>
-</section>
-
-<div class="animated-end"></div>
-
-<div style="padding: 20px 7% 36px; background: linear-gradient(90deg, #020108 0%, #0a0520 100%); text-align: right; color: #f5e8ff; font-size: 12px; line-height: 1.6; border-top: 1px solid rgba(192,132,252,.25);">
-  <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #c084fc; text-shadow: 0 0 8px rgba(192,132,252,.3);">Developed by HARISH.V</div>
-  <div style="margin-top: 4px; font-weight: 500; color: #e9d5ff;">Contact: 8438008759</div>
+  </div>  <div class="about-text"><div class="eyebrow">
+  Meet Your Guide
 </div>
 
-<!-- Consultation Form Modal -->
-<div id="consultationModal" class="consultation-modal">
-    <div class="modal-content">
-        <span id="closeModalBtn" class="close-btn">&times;</span>
-        <h2>Book a Consultation</h2>
-        <form id="consultationForm">
-            
-            <label>Name *</label>
-            <input type="text" id="c_name" required>
+<h2>
+  Ideas are everywhere.<br>
+  <span>Direction is rare.</span>
+</h2>
 
-            <label>Age *</label>
-            <input type="number" id="c_age" required>
+<p>
+  I'm Muralidhran, the consultant behind Xplora. I help students, aspiring
+  entrepreneurs and business owners make better decisions with practical
+  guidance, strategic thinking and a clear roadmap.
+</p>
 
-            <label>Educational Qualification *</label>
-            <select id="c_education" required>
-                <option value="">Select Qualification</option>
-                <option value="Below 10th">Below 10th</option>
-                <option value="10th Standard">10th Standard</option>
-                <option value="12th Standard">12th Standard</option>
-                <option value="Undergraduate">Undergraduate</option>
-                <option value="Postgraduate">Postgraduate</option>
-                <option value="Other">Other</option>
-            </select>
+<p>
+  Great journeys are rarely built alone. At Xplora, we believe your future
+  should not be left to chance. Every legendary move starts with the right conversation.
+</p>
 
-            <div id="groupFieldContainer" style="display: none;">
-                <label>If > 12th, Mention Group/Major Studied *</label>
-                <input type="text" id="c_group">
-            </div>
+<div class="stats">
 
-            <label>Interested Domain (Optional)</label>
-            <select id="c_domain">
-                <option value="">Select Domain</option>
-                <option value="Engineering">Engineering</option>
-                <option value="Nursing">Nursing</option>
-                <option value="Arts and Science">Arts and Science</option>
-                <option value="Other">Other</option>
-            </select>
+  <div class="stat">
+    <strong>01</strong>
+    <small>Clear Vision</small>
+  </div>
 
-            <label>Department in Interest</label>
-            <input type="text" id="c_department" placeholder="e.g., Computer Science, B.Sc Mathematics">
+  <div class="stat">
+    <strong>∞</strong>
+    <small>Possibilities</small>
+  </div>
 
-            <label>Interest in Government Exams?</label>
-            <select id="c_govexams">
-                <option value="No">No</option>
-                <option value="Yes">Yes</option>
-            </select>
+  <div class="stat">
+    <strong>100%</strong>
+    <small>Commitment</small>
+  </div>
 
-            <label>Address *</label>
-            <textarea id="c_address" rows="2" required></textarea>
-
-            <label>Phone Number *</label>
-            <input type="tel" id="c_phone" required>
-
-            <label>Say Your Words (Paragraph)</label>
-            <textarea id="c_message" rows="3" placeholder="Tell us about your goals or questions..."></textarea>
-
-            <button type="submit" class="submit-whatsapp-btn">Send via WhatsApp 🚀</button>
-        </form>
-    </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('consultationModal');
-    const openBtn = document.getElementById('openModalBtn');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const eduSelect = document.getElementById('c_education');
-    const groupContainer = document.getElementById('groupFieldContainer');
-    const groupInput = document.getElementById('c_group');
-    const form = document.getElementById('consultationForm');
+<a href="#contact" class="btn">
+  Let's Talk ↗️
+</a>
 
-    // Open Modal
-    if (openBtn) {
-      openBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        modal.style.display = 'block';
-      });
-    }
+  </div></section><section class="vision">  <div class="vision-content"><div class="eyebrow">
+  Your story is still being written
+</div>
 
-    // Close Modal via 'X'
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-      });
-    }
+<h2>
+  Think bigger.<br>
+  <span>Move boldly.</span>
+</h2>
 
-    // Close Modal when clicking outside content
-    window.addEventListener('click', function(event) {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
+<div class="vision-image">
+  <img src="image.png" alt="Muralidharan image">
+</div>
 
-    // Toggle Group Field visibility
-    if (eduSelect) {
-      eduSelect.addEventListener('change', function() {
-        const edu = this.value;
-        if (edu === 'Undergraduate' || edu === 'Postgraduate' || edu === 'Other') {
-          groupContainer.style.display = 'block';
-          groupInput.required = true;
-        } else {
-          groupContainer.style.display = 'none';
-          groupInput.required = false;
-        }
-      });
-    }
+  </div></section><section class="contact" id="contact">  <div><h2>
+  Your future is not<br>
+  something to wait for.
+</h2>
 
-    // Handle Form Submit and WhatsApp Redirect
-    if (form) {
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const name = document.getElementById('c_name').value;
-        const age = document.getElementById('c_age').value;
-        const education = eduSelect.value;
-        const group = groupInput.value;
-        const domain = document.getElementById('c_domain').value || 'N/A';
-        const department = document.getElementById('c_department').value || 'N/A';
-        const govExams = document.getElementById('c_govexams').value;
-        const address = document.getElementById('c_address').value;
-        const phone = document.getElementById('c_phone').value;
-        const message = document.getElementById('c_message').value || 'N/A';
+<p>
+  Tell us where you want to go. We'll help you find the next step.
+</p>
 
-        let text = *New Consultation Request* 📝\n\n +
-                   *Name:* ${name}\n +
-                   *Age:* ${age}\n +
-                   *Education:* ${education};
-        
-        if (group) {
-            text += \n*Group/Major:* ${group};
-        }
+<div class="contact-details">
 
-        text += \n*Interested Domain:* ${domain}\n +
-                *Department:* ${department}\n +
-                *Govt Exams Interest:* ${govExams}\n +
-                *Address:* ${address}\n +
-                *Phone:* ${phone}\n +
-                *Words:* ${message};
+  <a href="tel:+918807663840">
+    📞 +91 8807663840
+  </a>
 
-        const encodedText = encodeURIComponent(text);
-        const whatsappUrl = https://wa.me/8807663840?text=${encodedText};
-        
-        window.open(whatsappUrl, '_blank');
-        modal.style.display = 'none';
-      });
-    }
-  });
-</script>
+  <a href="https://wa.me/918807663840"
+     target="_blank"
+     rel="noopener noreferrer">
+    💬 +91 8807663840
+  </a>
 
-</body>
+  <a href="https://www.instagram.com/xplo.ra4/"
+     target="_blank"
+     rel="noopener noreferrer">
+    📷 xplo.ra4
+  </a>
+
+</div>
+
+  </div>  <button class="btn" onclick="openConsultationModal()">
+    Book a Consultation 📝
+  </button></section><div class="animated-end"></div><div style="
+padding: 20px 7% 36px;
+background: linear-gradient(90deg, #020108 0%, #0a0520 100%);
+text-align: right;
+color: #f5e8ff;
+font-size: 12px;
+line-height: 1.6;
+border-top: 1px solid rgba(192,132,252,.25);
+">  <div style="
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #c084fc;
+  text-shadow: 0 0 8px rgba(192,132,252,.3);
+  ">
+    Developed by HARISH.V
+  </div>  <div style="
+  margin-top: 4px;
+  font-weight: 500;
+  color: #e9d5ff;
+  ">
+    Contact: 8438008759
+  </div></div><!-- Consultation Form Modal --><div id="consultationModal" class="consultation-modal">  <div class="modal-content"><span class="close-btn" onclick="closeConsultationModal()">
+  &times;
+</span>
+
+<h2>Book a Consultation</h2>
+
+<form id="consultationForm" onsubmit="sendToWhatsApp(event)">
+
+  <label for="c_name">Name *</label>
+  <input type="text" id="c_name" required>
+
+  <label for="c_age">Age *</label>
+  <input type="number" id="c_age" min="1" max="120" required>
+
+  <label for="c_education">
+    Educational Qualification *
+  </label>
+
+  <select id="c_education"
+          onchange="toggleEducationGroup()"
+          required>
+
+    <option value="">
+      Select Qualification
+    </option>
+
+    <option value="Below 10th">
+      Below 10th
+    </option>
+
+    <option value="10th Standard">
+      10th Standard
+    </option>
+
+    <option value="12th Standard">
+      12th Standard
+    </option>
+
+    <option value="Undergraduate">
+      Undergraduate
+    </option>
+
+    <option value="Postgraduate">
+      Postgraduate
+    </option>
+
+    <option value="Other">
+      Other
+    </option>
+
+  </select>
+
+
+  <div id="groupFieldContainer" style="display: none;">
+
+    <label for="c_group">
+      If above 12th, Mention Group/Major Studied *
+    </label>
+
+    <input type="text" id="c_group">
+
+  </div>
+
+
+  <label for="c_domain">
+    Interested Domain (Optional)
+  </label>
+
+  <select id="c_domain">
+
+    <option value="">
+      Select Domain
+    </option>
+
+    <option value="Engineering">
+      Engineering
+    </option>
+
+    <option value="Nursing">
+      Nursing
+    </option>
+
+    <option value="Arts and Science">
+      Arts and Science
+    </option>
+
+    <option value="Other">
+      Other
+    </option>
+
+  </select>
+
+
+  <label for="c_department">
+    Department in Interest
+  </label>
+
+  <input
+    type="text"
+    id="c_department"
+    placeholder="e.g., Computer Science, B.Sc Mathematics"
+  >
+
+
+  <label for="c_govexams">
+    Interest in Government Exams?
+  </label>
+
+  <select id="c_govexams">
+
+    <option value="No">
+      No
+    </option>
+
+    <option value="Yes">
+      Yes
+    </option>
+
+  </select>
+
+
+  <label for="c_address">
+    Address *
+  </label>
+
+  <textarea
+    id="c_address"
+    rows="2"
+    required
+  ></textarea>
+
+
+  <label for="c_phone">
+    Phone Number *
+  </label>
+
+  <input
+    type="tel"
+    id="c_phone"
+    required
+  >
+
+
+  <label for="c_message">
+    Say Your Words (Paragraph)
+  </label>
+
+  <textarea
+    id="c_message"
+    rows="3"
+    placeholder="Tell us about your goals or questions..."
+  ></textarea>
+
+
+  <button
+    type="submit"
+    class="submit-whatsapp-btn"
+  >
+    Send via WhatsApp 🚀
+  </button>
+
+</form>
+
+  </div></div><script>
+
+function openConsultationModal() {
+  document.getElementById("consultationModal").style.display = "block";
+}
+
+
+function closeConsultationModal() {
+  document.getElementById("consultationModal").style.display = "none";
+}
+
+
+function toggleEducationGroup() {
+
+  const edu =
+    document.getElementById("c_education").value;
+
+  const groupContainer =
+    document.getElementById("groupFieldContainer");
+
+  const groupInput =
+    document.getElementById("c_group");
+
+
+  if (
+    edu === "Undergraduate" ||
+    edu === "Postgraduate" ||
+    edu === "Other"
+  ) {
+
+    groupContainer.style.display = "block";
+    groupInput.required = true;
+
+  } else {
+
+    groupContainer.style.display = "none";
+    groupInput.required = false;
+    groupInput.value = "";
+
+  }
+
+}
+
+
+function sendToWhatsApp(event) {
+
+  event.preventDefault();
+
+
+  /* Get customer information */
+
+  const name =
+    document.getElementById("c_name").value.trim();
+
+  const age =
+    document.getElementById("c_age").value.trim();
+
+  const education =
+    document.getElementById("c_education").value;
+
+  const group =
+    document.getElementById("c_group").value.trim();
+
+  const domain =
+    document.getElementById("c_domain").value || "N/A";
+
+  const department =
+    document.getElementById("c_department").value.trim() || "N/A";
+
+  const govExams =
+    document.getElementById("c_govexams").value;
+
+  const address =
+    document.getElementById("c_address").value.trim();
+
+  const phone =
+    document.getElementById("c_phone").value.trim();
+
+  const message =
+    document.getElementById("c_message").value.trim() || "N/A";
+
+
+  /* Create WhatsApp message */
+
+  let text =
+    `*New Consultation Request* 📝\n\n` +
+    `*Name:* ${name}\n` +
+    `*Age:* ${age}\n` +
+    `*Education:* ${education}\n`;
+
+
+  if (group) {
+
+    text +=
+      `*Group/Major:* ${group}\n`;
+
+  }
+
+
+  text +=
+    `*Interested Domain:* ${domain}\n` +
+    `*Department:* ${department}\n` +
+    `*Govt Exams Interest:* ${govExams}\n` +
+    `*Address:* ${address}\n` +
+    `*Phone:* ${phone}\n` +
+    `*Words:* ${message}`;
+
+
+  /* Encode message for URL */
+
+  const encodedText =
+    encodeURIComponent(text);
+
+
+  /* Your WhatsApp number
+     India country code = 91 */
+
+  const whatsappUrl =
+    `https://wa.me/918807663840?text=${encodedText}`;
+
+
+  /* Open WhatsApp */
+
+  window.open(
+    whatsappUrl,
+    "_blank"
+  );
+
+}
+
+
+/* Close modal when clicking outside it */
+
+window.onclick = function(event) {
+
+  const modal =
+    document.getElementById("consultationModal");
+
+  if (event.target === modal) {
+
+    closeConsultationModal();
+
+  }
+
+};
+
+</script></body>
 </html>
