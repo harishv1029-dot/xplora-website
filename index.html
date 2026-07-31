@@ -2236,7 +2236,7 @@ async function openSeeFeedbacks() {
               item.created_at
             );
 
-         if(!isNaN(dataObject.getTime())){
+         if (!isNaN(dateObject.getTime())) {
          
            date.textContent =
             dateObject.toLocaleString(
@@ -2265,7 +2265,7 @@ async function openSeeFeedbacks() {
 
         }else{
           date.textContent=
-            "Data unavailable";
+            "Date unavailable";
         }
 
         /* FEEDBACK TEXT */
@@ -2371,41 +2371,40 @@ function openFeedbackDetails(item) {
 
   if (item.created_at) {
 
-    const dateObject =
-      new Date(
-        item.created_at
-      );
+    const dateObject = new Date(item.created_at);
 
+    if (!isNaN(dateObject.getTime())) {
 
-    document.getElementById(
-      "detailDate"
-    ).textContent =
+      document.getElementById(
+        "detailDate"
+      ).textContent =
+        dateObject.toLocaleString(
+          "en-IN",
+          {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+          }
+        );
 
-      dateObject.toLocaleString(
-        "en-IN",
-        {
+    } else {
 
-          day: "numeric",
+      document.getElementById(
+        "detailDate"
+      ).textContent =
+        "Date unavailable";
 
-          month: "long",
-
-          year: "numeric",
-
-          hour: "2-digit",
-
-          minute: "2-digit",
-
-          second: "2-digit"
-
-        }
-      );
+    }
 
   } else {
 
     document.getElementById(
       "detailDate"
     ).textContent =
-      "N/A";
+      "Date unavailable";
 
   }
 
