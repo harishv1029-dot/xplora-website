@@ -317,13 +317,13 @@ section {
 }
 
 .about-visual {
-  width: 34%;
+  width: 39%;
   position: relative;
 }
 
 .about img {
-  width: 50%;
-  height: 300px;
+  width: 65%;
+  height: 400px;
   object-fit: cover;
   object-position: top;
 }
@@ -2236,8 +2236,9 @@ async function openSeeFeedbacks() {
               item.created_at
             );
 
-
-          date.textContent =
+         if(!isNaN(dataObject.getTime())){
+         
+           date.textContent =
             dateObject.toLocaleString(
               "en-IN",
               {
@@ -2262,6 +2263,10 @@ async function openSeeFeedbacks() {
 
         }
 
+        }else{
+          date.textContent=
+            "Data unavailable";
+        }
 
         /* FEEDBACK TEXT */
 
