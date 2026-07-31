@@ -745,6 +745,59 @@ section {
   cursor: wait;
 }
 
+/* ================= STAR RATING ================= */
+
+.feedback-rating {
+  margin-top: 15px;
+}
+
+.feedback-rating-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  margin: 0 !important;
+  padding: 0;
+  font-size: 34px;
+  line-height: 1;
+  color: #555;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+  color: #fbbf24;
+  text-shadow: 0 0 12px rgba(251,191,36,.55);
+}
+
+.rating-display {
+  color: #fbbf24;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.rating-number {
+  color: #aaa;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+
 .feedback-status {
 
   margin-top: 15px;
@@ -1524,6 +1577,27 @@ section {
         required
       ></textarea>
 
+      <div class="feedback-rating">
+        <span class="feedback-rating-label">Your Rating *</span>
+
+        <div class="star-rating" aria-label="Choose a rating from 1 to 5 stars">
+          <input type="radio" id="rating5" name="rating" value="5">
+          <label for="rating5" title="5 stars">★</label>
+
+          <input type="radio" id="rating4" name="rating" value="4">
+          <label for="rating4" title="4 stars">★</label>
+
+          <input type="radio" id="rating3" name="rating" value="3">
+          <label for="rating3" title="3 stars">★</label>
+
+          <input type="radio" id="rating2" name="rating" value="2">
+          <label for="rating2" title="2 stars">★</label>
+
+          <input type="radio" id="rating1" name="rating" value="1">
+          <label for="rating1" title="1 star">★</label>
+        </div>
+      </div>
+
       <button
         type="submit"
         class="feedback-submit-btn"
@@ -1652,6 +1726,22 @@ section {
       <div
         class="feedback-detail-value"
         id="detailDate"
+      >
+        -
+      </div>
+
+    </div>
+
+
+    <div class="feedback-detail-box">
+
+      <span class="feedback-detail-label">
+        Rating
+      </span>
+
+      <div
+        class="feedback-detail-value"
+        id="detailRating"
       >
         -
       </div>
@@ -1887,6 +1977,12 @@ async function submitFeedback(event) {
       "feedbackMessage"
     ).value.trim();
 
+  const ratingInput =
+    document.querySelector('input[name="rating"]:checked');
+
+  const rating =
+    ratingInput ? Number(ratingInput.value) : 0;
+
 
   const status =
     document.getElementById(
@@ -1905,11 +2001,13 @@ async function submitFeedback(event) {
   if (
     name === "" ||
     phone === "" ||
-    feedback === ""
+    feedback === "" ||
+    rating < 1 ||
+    rating > 5
   ) {
 
     showFeedbackStatus(
-      "Please fill all required fields.",
+      "Please fill all required fields and select a star rating.",
       false
     );
 
@@ -1955,7 +2053,8 @@ async function submitFeedback(event) {
 
             phone: phone,
 
-            feedback: feedback
+            feedback: feedback,
+            rating: rating
 
           })
 
@@ -2110,7 +2209,7 @@ async function openSeeFeedbacks() {
 
     const response =
       await fetch(
-        `${SUPABASE_URL}/rest/v1/feedbacks?select=id,name,phone,feedback,created_at&order=created_at.desc`,
+        `${SUPABASE_URL}/rest/v1/feedbacks?select=id,name,phone,feedback,rating,created_at&order=created_at.desc`,
         {
 
           method: "GET",
@@ -2268,6 +2367,29 @@ async function openSeeFeedbacks() {
             "Date unavailable";
         }
 
+        /* RATING */
+
+        const ratingDisplay =
+          document.createElement(
+            "div"
+          );
+
+        ratingDisplay.className =
+          "rating-display";
+
+        const numericRating =
+          Number(item.rating);
+
+        if (numericRating >= 1 && numericRating <= 5) {
+          ratingDisplay.innerHTML =
+            "★".repeat(numericRating) +
+            "☆".repeat(5 - numericRating) +
+            ` <span class="rating-number">${numericRating}/5</span>`;
+        } else {
+          ratingDisplay.textContent =
+            "No rating";
+        }
+
         /* FEEDBACK TEXT */
 
         const text =
@@ -2301,6 +2423,8 @@ async function openSeeFeedbacks() {
         card.appendChild(name);
 
         card.appendChild(date);
+
+        card.appendChild(ratingDisplay);
 
         card.appendChild(text);
 
@@ -2365,6 +2489,29 @@ function openFeedbackDetails(item) {
     "detailFeedback"
   ).textContent =
     item.feedback || "No feedback";
+
+
+  /* RATING */
+
+  const detailRating =
+    document.getElementById("detailRating");
+
+  const numericRating =
+    Number(item.rating);
+
+  if (numericRating >= 1 && numericRating <= 5) {
+
+    detailRating.innerHTML =
+      "★".repeat(numericRating) +
+      "☆".repeat(5 - numericRating) +
+      ` <span class="rating-number">${numericRating}/5</span>`;
+
+  } else {
+
+    detailRating.textContent =
+      "No rating";
+
+  }
 
 
   /* DATE + TIME */
