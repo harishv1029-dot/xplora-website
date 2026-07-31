@@ -7,7 +7,6 @@
 <title>Xplora | Build What Comes Next</title>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap');
 
 :root {
@@ -98,13 +97,10 @@ header {
 
 nav a {
   margin-left: 30px;
-
   text-decoration: none;
   color: white;
-
   font-size: 13px;
   font-weight: 700;
-
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -165,33 +161,25 @@ nav a:hover {
 
 .hero-content {
   max-width: 720px;
-
   position: relative;
   z-index: 1;
 }
 
 .eyebrow {
   color: #c084fc;
-
   font-size: 15px;
   font-weight: 800;
-
   letter-spacing: 4px;
   text-transform: uppercase;
-
   margin-bottom: 25px;
 }
 
 .hero h1 {
   font-family: "Playfair Display", Georgia, serif;
-
   font-size: clamp(54px, 7.5vw, 96px);
-
   line-height: .92;
   letter-spacing: -3px;
-
   margin-bottom: 32px;
-
   text-shadow: 0 0 30px rgba(139,92,246,.25);
 }
 
@@ -210,7 +198,6 @@ nav a:hover {
   -webkit-text-fill-color: transparent;
 
   background-clip: text;
-
   color: transparent;
 
   font-style: italic;
@@ -218,12 +205,9 @@ nav a:hover {
 
 .hero p {
   max-width: 640px;
-
   color: rgba(255,255,255,.78);
-
   font-size: 20px;
   line-height: 1.8;
-
   margin-bottom: 35px;
 }
 
@@ -312,7 +296,6 @@ section {
 
 .section-title {
   max-width: 800px;
-
   margin-bottom: 65px;
 }
 
@@ -332,7 +315,6 @@ section {
 
 .section-title span {
   color: #60a5fa;
-
   font-style: italic;
 }
 
@@ -411,13 +393,11 @@ section {
 
 .card h3 {
   margin-bottom: 15px;
-
   font-size: 22px;
 }
 
 .card p {
   color: var(--muted);
-
   line-height: 1.7;
 }
 
@@ -448,7 +428,6 @@ section {
 
 .about-visual {
   width: 34%;
-
   position: relative;
 }
 
@@ -457,7 +436,6 @@ section {
   height: 300px;
 
   object-fit: cover;
-
   object-position: top;
 
   filter: saturate(.8) contrast(1.1);
@@ -468,8 +446,8 @@ section {
 
   position: absolute;
 
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 300px;
 
   border: 2px solid #8b5cf6;
 
@@ -499,23 +477,18 @@ section {
 
 .about-text h2 span {
   color: #8B5CF6;
-
   font-style: italic;
 }
 
 .about-text p {
   color: var(--muted);
-
   line-height: 1.9;
-
   margin-bottom: 20px;
 }
 
 .stats {
   display: flex;
-
   gap: 45px;
-
   margin: 35px 0;
 }
 
@@ -580,7 +553,6 @@ section {
 
 .vision h2 span {
   color: #c084fc;
-
   font-style: italic;
 }
 
@@ -647,7 +619,6 @@ section {
 
 .contact-details a:hover {
   background: rgba(255,255,255,.22);
-
   transform: translateY(-2px);
 }
 
@@ -661,13 +632,11 @@ section {
 
 .contact p {
   margin-top: 20px;
-
   color: rgba(255,255,255,.8);
 }
 
 .contact .btn {
   background: white;
-
   color: #16052d;
 }
 
@@ -692,7 +661,9 @@ section {
     135deg,
     #7c3aed,
     #2563eb
-  );
+  ) !important;
+
+  color: white !important;
 }
 
 /* ============================= */
@@ -1032,6 +1003,12 @@ section {
   box-shadow: 0 0 25px rgba(124,58,237,.5);
 }
 
+.feedback-submit-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .feedback-status {
   margin-top: 15px;
 
@@ -1263,9 +1240,7 @@ section {
   .site-footer {
     text-align: center;
   }
-
 }
-
 </style>
 </head>
 
@@ -1282,13 +1257,9 @@ section {
   </div>
 
   <nav>
-
     <a href="#services">Services</a>
-
     <a href="#about">About</a>
-
     <a href="#contact">Contact</a>
-
   </nav>
 
 </header>
@@ -1348,80 +1319,51 @@ section {
   <div class="service-grid">
 
     <div class="card">
-
       <div class="icon">◎</div>
-
       <h3>Government Exam Guidance</h3>
-
       <p>
         Strategic guidance for UPSC, TNPSC, SSC, Banking and competitive examinations.
       </p>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">↗️</div>
-
       <h3>Startup Guidance</h3>
-
       <p>
         Transform your idea into a validated, practical and growth-ready venture.
       </p>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">⌘</div>
-
       <h3>Business Registration</h3>
-
       <p>
         Navigate MSME, Startup India, Udyam, GST, IEC and company formation with confidence.
       </p>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">◇</div>
-
       <h3>Idea Validation</h3>
-
       <p>
         Challenge assumptions, understand the market and build on a stronger foundation.
       </p>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">◈</div>
-
       <h3>Funding & Investors</h3>
-
       <p>
         Prepare your business, pitch and vision for the opportunities that can change everything.
       </p>
-
     </div>
 
-
     <div class="card">
-
       <div class="icon">✦</div>
-
       <h3>Training & Mentorship</h3>
-
       <p>
         Build skills, confidence and the mindset required to make your next move count.
       </p>
-
     </div>
 
   </div>
@@ -1443,7 +1385,6 @@ section {
     >
 
   </div>
-
 
   <div class="about-text">
 
@@ -1467,37 +1408,24 @@ section {
       should not be left to chance. Every legendary move starts with the right conversation.
     </p>
 
-
     <div class="stats">
 
       <div class="stat">
-
         <strong>01</strong>
-
         <small>Clear Vision</small>
-
       </div>
 
-
       <div class="stat">
-
         <strong>∞</strong>
-
         <small>Possibilities</small>
-
       </div>
 
-
       <div class="stat">
-
         <strong>100%</strong>
-
         <small>Commitment</small>
-
       </div>
 
     </div>
-
 
     <a href="#contact" class="btn">
       Let's Talk ↗️
@@ -1524,7 +1452,6 @@ section {
       Think bigger.<br>
       <span>Move boldly.</span>
     </h2>
-
 
     <div class="vision-image">
 
@@ -1557,13 +1484,11 @@ section {
       Tell us where you want to go. We'll help you find the next step.
     </p>
 
-
     <div class="contact-details">
 
       <a href="tel:+918807663840">
         📞 +91 8807663840
       </a>
-
 
       <a
         href="https://wa.me/918807663840"
@@ -1572,7 +1497,6 @@ section {
       >
         💬 +91 8807663840
       </a>
-
 
       <a
         href="https://www.instagram.com/xplo.ra4/"
@@ -1587,8 +1511,6 @@ section {
   </div>
 
 
-  <!-- BUTTONS -->
-
   <div class="contact-actions">
 
     <button
@@ -1598,7 +1520,6 @@ section {
     >
       Book a Consultation 📝
     </button>
-
 
     <button
       class="btn feedback-main-btn"
@@ -1641,10 +1562,7 @@ section {
 <!-- CONSULTATION MODAL -->
 <!-- ====================================================== -->
 
-<div
-  id="consultationModal"
-  class="consultation-modal"
->
+<div id="consultationModal" class="consultation-modal">
 
   <div class="modal-content">
 
@@ -1655,20 +1573,16 @@ section {
       &times;
     </span>
 
-
     <h2>
       Book a Consultation
     </h2>
-
 
     <form
       id="consultationForm"
       onsubmit="sendToWhatsApp(event)"
     >
 
-      <label for="c_name">
-        Name *
-      </label>
+      <label for="c_name">Name *</label>
 
       <input
         type="text"
@@ -1676,10 +1590,7 @@ section {
         required
       >
 
-
-      <label for="c_age">
-        Age *
-      </label>
+      <label for="c_age">Age *</label>
 
       <input
         type="number"
@@ -1688,7 +1599,6 @@ section {
         max="120"
         required
       >
-
 
       <label for="c_education">
         Educational Qualification *
@@ -1730,7 +1640,6 @@ section {
 
       </select>
 
-
       <div
         id="groupFieldContainer"
         style="display:none;"
@@ -1746,7 +1655,6 @@ section {
         >
 
       </div>
-
 
       <label for="c_domain">
         Interested Domain (Optional)
@@ -1776,7 +1684,6 @@ section {
 
       </select>
 
-
       <label for="c_department">
         Department in Interest
       </label>
@@ -1786,7 +1693,6 @@ section {
         id="c_department"
         placeholder="e.g., Computer Science, B.Sc Mathematics"
       >
-
 
       <label for="c_govexams">
         Interest in Government Exams?
@@ -1804,7 +1710,6 @@ section {
 
       </select>
 
-
       <label for="c_address">
         Address *
       </label>
@@ -1814,7 +1719,6 @@ section {
         rows="2"
         required
       ></textarea>
-
 
       <label for="c_phone">
         Phone Number *
@@ -1826,7 +1730,6 @@ section {
         required
       >
 
-
       <label for="c_message">
         Say Your Words (Paragraph)
       </label>
@@ -1836,7 +1739,6 @@ section {
         rows="3"
         placeholder="Tell us about your goals or questions..."
       ></textarea>
-
 
       <button
         type="submit"
@@ -1856,10 +1758,7 @@ section {
 <!-- FEEDBACK MENU -->
 <!-- ====================================================== -->
 
-<div
-  id="feedbackMenu"
-  class="feedback-menu"
->
+<div id="feedbackMenu" class="feedback-menu">
 
   <div class="feedback-menu-content">
 
@@ -1870,11 +1769,9 @@ section {
       &times;
     </span>
 
-
     <h2>
       Feedbacks
     </h2>
-
 
     <button
       class="feedback-option"
@@ -1883,7 +1780,6 @@ section {
     >
       ✍️ Give Feedback
     </button>
-
 
     <button
       class="feedback-option"
@@ -1902,10 +1798,7 @@ section {
 <!-- GIVE FEEDBACK MODAL -->
 <!-- ====================================================== -->
 
-<div
-  id="feedbackFormModal"
-  class="feedback-form-modal"
->
+<div id="feedbackFormModal" class="feedback-form-modal">
 
   <div class="feedback-form-content">
 
@@ -1916,11 +1809,9 @@ section {
       &times;
     </span>
 
-
     <h2>
       Give Your Feedback
     </h2>
-
 
     <form
       id="feedbackForm"
@@ -1939,7 +1830,6 @@ section {
         required
       >
 
-
       <label for="feedbackPhone">
         Phone Number *
       </label>
@@ -1951,7 +1841,6 @@ section {
         maxlength="20"
         required
       >
-
 
       <label for="feedbackMessage">
         Your Feedback *
@@ -1965,7 +1854,6 @@ section {
         required
       ></textarea>
 
-
       <button
         type="submit"
         class="feedback-submit-btn"
@@ -1973,7 +1861,6 @@ section {
       >
         Submit Feedback 🚀
       </button>
-
 
       <div
         id="feedbackStatus"
@@ -1991,10 +1878,7 @@ section {
 <!-- SEE FEEDBACK MODAL -->
 <!-- ====================================================== -->
 
-<div
-  id="feedbackListModal"
-  class="feedback-list-modal"
->
+<div id="feedbackListModal" class="feedback-list-modal">
 
   <div class="feedback-list-content">
 
@@ -2005,11 +1889,9 @@ section {
       &times;
     </span>
 
-
     <h2>
       What People Say 💜
     </h2>
-
 
     <div
       id="feedbackList"
@@ -2017,7 +1899,7 @@ section {
     >
 
       <div class="feedback-loading">
-        Loading feedbacks...
+        Click See Feedbacks to load feedback.
       </div>
 
     </div>
@@ -2034,7 +1916,7 @@ section {
 <script>
 
 /* ====================================================== */
-/* SUPABASE CONFIG */
+/* SUPABASE CONNECTION */
 /* ====================================================== */
 
 const SUPABASE_URL =
@@ -2050,18 +1932,13 @@ const SUPABASE_PUBLISHABLE_KEY =
 
 function openConsultationModal() {
 
-  document.getElementById(
-    "consultationModal"
-  ).style.display = "flex";
+  document.getElementById("consultationModal").style.display = "flex";
 
 }
 
-
 function closeConsultationModal() {
 
-  document.getElementById(
-    "consultationModal"
-  ).style.display = "none";
+  document.getElementById("consultationModal").style.display = "none";
 
 }
 
@@ -2073,20 +1950,13 @@ function closeConsultationModal() {
 function toggleEducationGroup() {
 
   const edu =
-    document.getElementById(
-      "c_education"
-    ).value;
+    document.getElementById("c_education").value;
 
   const groupContainer =
-    document.getElementById(
-      "groupFieldContainer"
-    );
+    document.getElementById("groupFieldContainer");
 
   const groupInput =
-    document.getElementById(
-      "c_group"
-    );
-
+    document.getElementById("c_group");
 
   if (
     edu === "Undergraduate" ||
@@ -2094,20 +1964,13 @@ function toggleEducationGroup() {
     edu === "Other"
   ) {
 
-    groupContainer.style.display =
-      "block";
-
+    groupContainer.style.display = "block";
     groupInput.required = true;
 
-  }
+  } else {
 
-  else {
-
-    groupContainer.style.display =
-      "none";
-
+    groupContainer.style.display = "none";
     groupInput.required = false;
-
     groupInput.value = "";
 
   }
@@ -2123,110 +1986,66 @@ function sendToWhatsApp(event) {
 
   event.preventDefault();
 
-
   const name =
-    document.getElementById(
-      "c_name"
-    ).value.trim();
-
+    document.getElementById("c_name").value.trim();
 
   const age =
-    document.getElementById(
-      "c_age"
-    ).value.trim();
-
+    document.getElementById("c_age").value.trim();
 
   const education =
-    document.getElementById(
-      "c_education"
-    ).value;
-
+    document.getElementById("c_education").value;
 
   const group =
-    document.getElementById(
-      "c_group"
-    ).value.trim();
-
+    document.getElementById("c_group").value.trim();
 
   const domain =
-    document.getElementById(
-      "c_domain"
-    ).value || "N/A";
-
+    document.getElementById("c_domain").value || "N/A";
 
   const department =
-    document.getElementById(
-      "c_department"
-    ).value.trim() || "N/A";
-
+    document.getElementById("c_department").value.trim() || "N/A";
 
   const govExams =
-    document.getElementById(
-      "c_govexams"
-    ).value;
-
+    document.getElementById("c_govexams").value;
 
   const address =
-    document.getElementById(
-      "c_address"
-    ).value.trim();
-
+    document.getElementById("c_address").value.trim();
 
   const phone =
-    document.getElementById(
-      "c_phone"
-    ).value.trim();
-
+    document.getElementById("c_phone").value.trim();
 
   const message =
-    document.getElementById(
-      "c_message"
-    ).value.trim() || "N/A";
-
+    document.getElementById("c_message").value.trim() || "N/A";
 
   let text =
     `*New Consultation Request* 📝\n\n` +
-
     `*Name:* ${name}\n` +
-
     `*Age:* ${age}\n` +
-
     `*Education:* ${education}\n`;
-
 
   if (group) {
 
-    text +=
-      `*Group/Major:* ${group}\n`;
+    text += `*Group/Major:* ${group}\n`;
 
   }
 
-
   text +=
     `*Interested Domain:* ${domain}\n` +
-
     `*Department:* ${department}\n` +
-
     `*Govt Exams Interest:* ${govExams}\n` +
-
     `*Address:* ${address}\n` +
-
     `*Phone:* ${phone}\n` +
-
     `*Words:* ${message}`;
-
 
   const encodedText =
     encodeURIComponent(text);
 
-
   const whatsappUrl =
     `https://wa.me/918807663840?text=${encodedText}`;
 
-
   window.open(
     whatsappUrl,
-    "_blank"
+    "_blank",
+    "noopener,noreferrer"
   );
 
 }
@@ -2238,18 +2057,13 @@ function sendToWhatsApp(event) {
 
 function openFeedbackMenu() {
 
-  document.getElementById(
-    "feedbackMenu"
-  ).style.display = "flex";
+  document.getElementById("feedbackMenu").style.display = "flex";
 
 }
 
-
 function closeFeedbackMenu() {
 
-  document.getElementById(
-    "feedbackMenu"
-  ).style.display = "none";
+  document.getElementById("feedbackMenu").style.display = "none";
 
 }
 
@@ -2262,201 +2076,29 @@ function openGiveFeedback() {
 
   closeFeedbackMenu();
 
-  document.getElementById(
-    "feedbackFormModal"
-  ).style.display = "flex";
+  document.getElementById("feedbackFormModal").style.display = "flex";
 
 }
-
 
 function closeGiveFeedback() {
 
-  document.getElementById(
-    "feedbackFormModal"
-  ).style.display = "none";
+  document.getElementById("feedbackFormModal").style.display = "none";
 
 }
 
 
 /* ====================================================== */
-/* SUBMIT FEEDBACK TO SUPABASE */
+/* SHOW STATUS */
 /* ====================================================== */
 
-async function submitFeedback(event) {
-
-  event.preventDefault();
-
-
-  const name =
-    document.getElementById(
-      "feedbackName"
-    ).value.trim();
-
-
-  const phone =
-    document.getElementById(
-      "feedbackPhone"
-    ).value.trim();
-
-
-  const feedback =
-    document.getElementById(
-      "feedbackMessage"
-    ).value.trim();
-
+function showFeedbackStatus(message, success) {
 
   const status =
-    document.getElementById(
-      "feedbackStatus"
-    );
+    document.getElementById("feedbackStatus");
 
+  status.style.display = "block";
 
-  const submitButton =
-    document.getElementById(
-      "feedbackSubmitBtn"
-    );
-
-
-  if (!name || !phone || !feedback) {
-
-    showFeedbackStatus(
-      "Please fill all required fields.",
-      false
-    );
-
-    return;
-
-  }
-
-
-  submitButton.disabled = true;
-
-  submitButton.textContent =
-    "Submitting...";
-
-
-  try {
-
-    const response =
-      await fetch(
-        `${SUPABASE_URL}/rest/v1/feedbacks`,
-        {
-
-          method: "POST",
-
-          headers: {
-
-            "Content-Type":
-              "application/json",
-
-            "apikey":
-              SUPABASE_PUBLISHABLE_KEY,
-
-            "Authorization":
-              `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
-
-            "Prefer":
-              "return=minimal"
-
-          },
-
-          body: JSON.stringify({
-
-            name: name,
-
-            phone: phone,
-
-            feedback: feedback
-
-          })
-
-        }
-      );
-
-
-    if (!response.ok) {
-
-      const errorText =
-        await response.text();
-
-      console.error(
-        "Supabase error:",
-        errorText
-      );
-
-      throw new Error(
-        "Unable to save feedback."
-      );
-
-    }
-
-
-    showFeedbackStatus(
-      "Feedback submitted successfully! ❤️",
-      true
-    );
-
-
-    document.getElementById(
-      "feedbackForm"
-    ).reset();
-
-
-    setTimeout(() => {
-
-      closeGiveFeedback();
-
-    }, 1500);
-
-  }
-
-
-  catch (error) {
-
-    console.error(error);
-
-    showFeedbackStatus(
-      "Could not save feedback. Please try again.",
-      false
-    );
-
-  }
-
-
-  finally {
-
-    submitButton.disabled = false;
-
-    submitButton.textContent =
-      "Submit Feedback 🚀";
-
-  }
-
-}
-
-
-/* ====================================================== */
-/* FEEDBACK STATUS */
-/* ====================================================== */
-
-function showFeedbackStatus(
-  message,
-  success
-) {
-
-  const status =
-    document.getElementById(
-      "feedbackStatus"
-    );
-
-
-  status.style.display =
-    "block";
-
-
-  status.textContent =
-    message;
-
+  status.textContent = message;
 
   if (success) {
 
@@ -2469,9 +2111,7 @@ function showFeedbackStatus(
     status.style.border =
       "1px solid rgba(74,222,128,.3)";
 
-  }
-
-  else {
+  } else {
 
     status.style.background =
       "rgba(239,68,68,.15)";
@@ -2488,54 +2128,67 @@ function showFeedbackStatus(
 
 
 /* ====================================================== */
-/* SEE FEEDBACK */
+/* SUBMIT FEEDBACK */
 /* ====================================================== */
 
-async function openSeeFeedbacks() {
+async function submitFeedback(event) {
 
-  closeFeedbackMenu();
+  event.preventDefault();
 
+  const name =
+    document.getElementById("feedbackName").value.trim();
 
-  document.getElementById(
-    "feedbackListModal"
-  ).style.display = "flex";
+  const phone =
+    document.getElementById("feedbackPhone").value.trim();
 
+  const feedback =
+    document.getElementById("feedbackMessage").value.trim();
 
-  const feedbackList =
-    document.getElementById(
-      "feedbackList"
+  const submitButton =
+    document.getElementById("feedbackSubmitBtn");
+
+  if (!name || !phone || !feedback) {
+
+    showFeedbackStatus(
+      "Please fill all required fields.",
+      false
     );
 
+    return;
 
-  feedbackList.innerHTML = `
-    <div class="feedback-loading">
-      Loading feedbacks...
-    </div>
-  `;
+  }
 
+  submitButton.disabled = true;
+  submitButton.textContent = "Submitting...";
 
   try {
 
     const response =
       await fetch(
-        `${SUPABASE_URL}/rest/v1/feedbacks?select=name,feedback,created_at&order=created_at.desc`,
+        `${SUPABASE_URL}/rest/v1/feedbacks`,
         {
-
-          method: "GET",
+          method: "POST",
 
           headers: {
+            "Content-Type": "application/json",
 
             "apikey":
               SUPABASE_PUBLISHABLE_KEY,
 
             "Authorization":
-              `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+              `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
 
-          }
+            "Prefer":
+              "return=minimal"
+          },
 
+          body: JSON.stringify({
+            name: name,
+            phone: phone,
+            feedback: feedback
+          })
         }
       );
-
 
     if (!response.ok) {
 
@@ -2543,20 +2196,108 @@ async function openSeeFeedbacks() {
         await response.text();
 
       console.error(
-        "Supabase error:",
+        "Supabase INSERT error:",
         errorText
       );
 
-      throw new Error(
-        "Unable to load feedbacks."
-      );
+      throw new Error(errorText);
 
     }
 
+    showFeedbackStatus(
+      "Feedback submitted successfully! ❤️",
+      true
+    );
+
+    document
+      .getElementById("feedbackForm")
+      .reset();
+
+    setTimeout(() => {
+
+      closeGiveFeedback();
+
+    }, 1500);
+
+  } catch (error) {
+
+    console.error(
+      "Feedback submission error:",
+      error
+    );
+
+    showFeedbackStatus(
+      "Could not save feedback. Check your Supabase RLS policies.",
+      false
+    );
+
+  } finally {
+
+    submitButton.disabled = false;
+
+    submitButton.textContent =
+      "Submit Feedback 🚀";
+
+  }
+
+}
+
+
+/* ====================================================== */
+/* SEE FEEDBACKS */
+/* ====================================================== */
+
+async function openSeeFeedbacks() {
+
+  closeFeedbackMenu();
+
+  document.getElementById(
+    "feedbackListModal"
+  ).style.display = "flex";
+
+  const feedbackList =
+    document.getElementById("feedbackList");
+
+  feedbackList.innerHTML = `
+    <div class="feedback-loading">
+      Loading feedbacks...
+    </div>
+  `;
+
+  try {
+
+    const response =
+      await fetch(
+        `${SUPABASE_URL}/rest/v1/feedbacks?select=name,feedback,created_at&order=created_at.desc`,
+        {
+          method: "GET",
+
+          headers: {
+            "apikey":
+              SUPABASE_PUBLISHABLE_KEY,
+
+            "Authorization":
+              `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+          }
+        }
+      );
+
+    if (!response.ok) {
+
+      const errorText =
+        await response.text();
+
+      console.error(
+        "Supabase SELECT error:",
+        errorText
+      );
+
+      throw new Error(errorText);
+
+    }
 
     const feedbacks =
       await response.json();
-
 
     if (
       !feedbacks ||
@@ -2575,102 +2316,83 @@ async function openSeeFeedbacks() {
 
     }
 
-
     feedbackList.innerHTML = "";
 
+    feedbacks.forEach(item => {
 
-    feedbacks.forEach(
-      item => {
+      const card =
+        document.createElement("div");
 
-        const card =
-          document.createElement(
-            "div"
+      card.className =
+        "feedback-card";
+
+
+      const name =
+        document.createElement("div");
+
+      name.className =
+        "feedback-card-name";
+
+      name.textContent =
+        item.name || "Anonymous";
+
+
+      const date =
+        document.createElement("div");
+
+      date.className =
+        "feedback-card-date";
+
+      if (item.created_at) {
+
+        const dateObject =
+          new Date(item.created_at);
+
+        date.textContent =
+          dateObject.toLocaleDateString(
+            "en-IN",
+            {
+              day: "numeric",
+              month: "short",
+              year: "numeric"
+            }
           );
-
-
-        card.className =
-          "feedback-card";
-
-
-        const name =
-          document.createElement(
-            "div"
-          );
-
-        name.className =
-          "feedback-card-name";
-
-        name.textContent =
-          item.name || "Anonymous";
-
-
-        const date =
-          document.createElement(
-            "div"
-          );
-
-        date.className =
-          "feedback-card-date";
-
-        if (item.created_at) {
-
-          const dateObject =
-            new Date(
-              item.created_at
-            );
-
-          date.textContent =
-            dateObject.toLocaleDateString(
-              "en-IN",
-              {
-                day: "numeric",
-                month: "short",
-                year: "numeric"
-              }
-            );
-
-        }
-
-
-        const text =
-          document.createElement(
-            "div"
-          );
-
-        text.className =
-          "feedback-card-text";
-
-        text.textContent =
-          item.feedback || "";
-
-
-        card.appendChild(name);
-
-        card.appendChild(date);
-
-        card.appendChild(text);
-
-
-        feedbackList.appendChild(
-          card
-        );
 
       }
+
+
+      const text =
+        document.createElement("div");
+
+      text.className =
+        "feedback-card-text";
+
+      text.textContent =
+        item.feedback || "";
+
+
+      card.appendChild(name);
+
+      card.appendChild(date);
+
+      card.appendChild(text);
+
+      feedbackList.appendChild(card);
+
+    });
+
+  } catch (error) {
+
+    console.error(
+      "Feedback loading error:",
+      error
     );
-
-  }
-
-
-  catch (error) {
-
-    console.error(error);
-
 
     feedbackList.innerHTML = `
       <div class="feedback-empty">
         ❌ Unable to load feedbacks.
         <br><br>
-        Please check your Supabase table and settings.
+        Check your Supabase table and RLS policies.
       </div>
     `;
 
@@ -2689,102 +2411,73 @@ function closeSeeFeedbacks() {
 
 
 /* ====================================================== */
-/* CLOSE MODALS WHEN CLICKING OUTSIDE */
+/* CLOSE WHEN CLICKING OUTSIDE */
 /* ====================================================== */
 
-window.addEventListener(
-  "click",
-  function(event) {
+window.addEventListener("click", function(event) {
 
-    const consultationModal =
-      document.getElementById(
-        "consultationModal"
-      );
+  const consultationModal =
+    document.getElementById("consultationModal");
 
+  const feedbackMenu =
+    document.getElementById("feedbackMenu");
 
-    const feedbackMenu =
-      document.getElementById(
-        "feedbackMenu"
-      );
+  const feedbackFormModal =
+    document.getElementById("feedbackFormModal");
 
-
-    const feedbackFormModal =
-      document.getElementById(
-        "feedbackFormModal"
-      );
+  const feedbackListModal =
+    document.getElementById("feedbackListModal");
 
 
-    const feedbackListModal =
-      document.getElementById(
-        "feedbackListModal"
-      );
+  if (event.target === consultationModal) {
 
-
-    if (
-      event.target ===
-      consultationModal
-    ) {
-
-      closeConsultationModal();
-
-    }
-
-
-    if (
-      event.target ===
-      feedbackMenu
-    ) {
-
-      closeFeedbackMenu();
-
-    }
-
-
-    if (
-      event.target ===
-      feedbackFormModal
-    ) {
-
-      closeGiveFeedback();
-
-    }
-
-
-    if (
-      event.target ===
-      feedbackListModal
-    ) {
-
-      closeSeeFeedbacks();
-
-    }
+    closeConsultationModal();
 
   }
-);
 
 
-/* ====================================================== */
-/* ESC KEY CLOSE */
-/* ====================================================== */
+  if (event.target === feedbackMenu) {
 
-document.addEventListener(
-  "keydown",
-  function(event) {
-
-    if (event.key === "Escape") {
-
-      closeConsultationModal();
-
-      closeFeedbackMenu();
-
-      closeGiveFeedback();
-
-      closeSeeFeedbacks();
-
-    }
+    closeFeedbackMenu();
 
   }
-);
+
+
+  if (event.target === feedbackFormModal) {
+
+    closeGiveFeedback();
+
+  }
+
+
+  if (event.target === feedbackListModal) {
+
+    closeSeeFeedbacks();
+
+  }
+
+});
+
+
+/* ====================================================== */
+/* ESC KEY */
+/* ====================================================== */
+
+document.addEventListener("keydown", function(event) {
+
+  if (event.key === "Escape") {
+
+    closeConsultationModal();
+
+    closeFeedbackMenu();
+
+    closeGiveFeedback();
+
+    closeSeeFeedbacks();
+
+  }
+
+});
 
 </script>
 
