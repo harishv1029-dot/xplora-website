@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -54,6 +55,8 @@ body:before {
   background-position: 10px 20px, 70px 90px;
 }
 
+/* ================= HEADER ================= */
+
 header {
   position: absolute;
   top: 0;
@@ -77,7 +80,14 @@ header {
 }
 
 .logo span {
-  background: linear-gradient(90deg, #fbbf24, #60a5fa, #c084fc, #34d399);
+  background: linear-gradient(
+    90deg,
+    #fbbf24,
+    #60a5fa,
+    #c084fc,
+    #34d399
+  );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -93,6 +103,8 @@ nav a {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+/* ================= HERO ================= */
 
 .hero {
   min-height: 850px;
@@ -192,6 +204,7 @@ nav a {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 
   padding: 17px 25px;
@@ -224,24 +237,7 @@ section {
   padding: 120px 7%;
 }
 
-.vision-image {
-  margin-top: 30px;
-  width: 100%;
-  max-width: 700px;
-  overflow: hidden;
-
-  border-radius: 24px;
-  border: 1px solid rgba(192,132,252,.35);
-
-  box-shadow: 0 0 30px rgba(124,58,237,.25);
-}
-
-.vision-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
+/* ================= SERVICES ================= */
 
 .section-title {
   max-width: 800px;
@@ -329,6 +325,8 @@ section {
   line-height: 1.7;
 }
 
+/* ================= ABOUT ================= */
+
 .about {
   display: flex;
   align-items: center;
@@ -383,7 +381,6 @@ section {
   flex: 1;
 }
 
-/* COSMIC VIOLET FOR BOTH LINES */
 .about-text h2 {
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(45px, 5vw, 72px);
@@ -426,6 +423,8 @@ section {
   letter-spacing: 1px;
 }
 
+/* ================= VISION ================= */
+
 .vision {
   min-height: 500px;
   color: white;
@@ -461,6 +460,27 @@ section {
   color: #c084fc;
   font-style: italic;
 }
+
+.vision-image {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+
+  border-radius: 24px;
+  border: 1px solid rgba(192,132,252,.35);
+
+  box-shadow: 0 0 30px rgba(124,58,237,.25);
+}
+
+.vision-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ================= CONTACT ================= */
 
 .contact {
   background: linear-gradient(
@@ -530,6 +550,28 @@ section {
   color: #16052d;
 }
 
+/* ================= CONSULTATION + FEEDBACK BUTTONS ================= */
+
+.contact-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.feedback-main-btn {
+  background: linear-gradient(135deg, #c084fc, #7c3aed);
+  color: white;
+}
+
+.feedback-main-btn:hover {
+  background: linear-gradient(135deg, #e9d5ff, #a78bfa);
+  color: #16052d;
+}
+
+/* ================= ANIMATION ================= */
+
 .animated-end {
   position: relative;
   height: 140px;
@@ -579,6 +621,337 @@ section {
 
 }
 
+/* ================= MODALS ================= */
+
+.consultation-modal,
+.feedback-modal,
+.feedback-menu {
+  display: none;
+
+  position: fixed;
+  z-index: 2000;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: auto;
+
+  background: rgba(0,0,0,.78);
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.modal-content,
+.feedback-menu-content,
+.feedback-form-content,
+.feedback-list-content {
+
+  background: #121212;
+  color: #e9d5ff;
+
+  width: 90%;
+  max-width: 550px;
+
+  padding: 30px;
+
+  border: 1px solid rgba(192,132,252,.35);
+
+  border-radius: 14px;
+
+  position: relative;
+
+  box-shadow:
+    0 0 40px rgba(124,58,237,.35);
+}
+
+.feedback-menu-content {
+  max-width: 420px;
+  text-align: center;
+}
+
+.feedback-menu-content h2,
+.feedback-form-content h2,
+.feedback-list-content h2 {
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 32px;
+
+  margin-bottom: 25px;
+
+  color: #c084fc;
+}
+
+.close-btn {
+  color: #aaa;
+
+  position: absolute;
+
+  right: 20px;
+  top: 15px;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+/* ================= FORM ================= */
+
+.consultation-modal label,
+.feedback-form-content label {
+
+  display: block;
+
+  margin-top: 12px;
+  margin-bottom: 5px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.consultation-modal input,
+.consultation-modal select,
+.consultation-modal textarea,
+.feedback-form-content input,
+.feedback-form-content textarea {
+
+  width: 100%;
+
+  padding: 11px;
+
+  background: #1e1e1e;
+
+  border: 1px solid #444;
+
+  color: white;
+
+  border-radius: 5px;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.consultation-modal input:focus,
+.consultation-modal select:focus,
+.consultation-modal textarea:focus,
+.feedback-form-content input:focus,
+.feedback-form-content textarea:focus {
+
+  border-color: #a855f7;
+
+  box-shadow: 0 0 10px rgba(168,85,247,.25);
+}
+
+.submit-whatsapp-btn {
+
+  width: 100%;
+
+  margin-top: 20px;
+
+  background-color: #25D366;
+
+  color: white;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.submit-whatsapp-btn:hover {
+  background-color: #20ba5a;
+}
+
+/* ================= FEEDBACK MENU ================= */
+
+.feedback-option {
+
+  width: 100%;
+
+  padding: 14px;
+
+  margin-top: 12px;
+
+  border: 1px solid rgba(192,132,252,.35);
+
+  border-radius: 7px;
+
+  background: linear-gradient(
+    135deg,
+    #160b35,
+    #071b4d
+  );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.feedback-option:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 20px rgba(139,92,246,.5);
+
+  background: linear-gradient(
+    135deg,
+    #7c3aed,
+    #2563eb
+  );
+}
+
+/* ================= FEEDBACK CARDS ================= */
+
+.feedback-card {
+
+  background: linear-gradient(
+    135deg,
+    #160b35,
+    #071b4d
+  );
+
+  border: 1px solid rgba(192,132,252,.25);
+
+  border-radius: 10px;
+
+  padding: 18px;
+
+  margin-bottom: 14px;
+}
+
+.feedback-card-name {
+
+  color: #c084fc;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  margin-bottom: 6px;
+}
+
+.feedback-card-date {
+
+  color: #8f86a8;
+
+  font-size: 11px;
+
+  margin-bottom: 10px;
+}
+
+.feedback-card-text {
+
+  color: #eee;
+
+  line-height: 1.6;
+
+  word-break: break-word;
+}
+
+.feedback-list {
+
+  max-height: 450px;
+
+  overflow-y: auto;
+
+  padding-right: 5px;
+}
+
+.feedback-loading {
+
+  text-align: center;
+
+  color: #c4b5fd;
+
+  padding: 25px;
+}
+
+.no-feedback {
+
+  text-align: center;
+
+  color: #aaa;
+
+  padding: 25px;
+}
+
+/* ================= FOOTER ================= */
+
+.developer-footer {
+
+  padding: 20px 7% 36px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #020108 0%,
+      #0a0520 100%
+    );
+
+  text-align: right;
+
+  color: #f5e8ff;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  border-top:
+    1px solid rgba(192,132,252,.25);
+}
+
+.developer-footer-title {
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  color: #c084fc;
+
+  text-shadow:
+    0 0 8px rgba(192,132,252,.3);
+}
+
+.developer-footer-contact {
+
+  margin-top: 4px;
+
+  font-weight: 500;
+
+  color: #e9d5ff;
+}
+
+/* ================= MOBILE ================= */
+
 @media(max-width: 800px) {
 
   nav {
@@ -587,9 +960,11 @@ section {
 
   .hero {
     min-height: auto;
+
     padding-top: 150px;
 
     flex-direction: column;
+
     align-items: flex-start;
   }
 
@@ -610,6 +985,10 @@ section {
     width: 90%;
   }
 
+  .about img {
+    width: 70%;
+  }
+
   .about-text {
     text-align: center;
   }
@@ -623,118 +1002,51 @@ section {
     align-items: flex-start;
   }
 
+  .contact-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+
+  .modal-content,
+  .feedback-menu-content,
+  .feedback-form-content,
+  .feedback-list-content {
+    width: 96%;
+    padding: 24px;
+  }
+
 }
 
-/* Modal Styling */
+/* Small mobile */
 
-.consultation-modal {
-  display: none;
+@media(max-width: 450px) {
 
-  position: fixed;
-  z-index: 1000;
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-  left: 0;
-  top: 0;
+  .contact-actions .btn {
+    width: 100%;
+  }
 
-  width: 100%;
-  height: 100%;
+  .stats {
+    gap: 20px;
+  }
 
-  overflow: auto;
-
-  background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-  background-color: #121212;
-  color: #e9d5ff;
-
-  margin: 5% auto;
-  padding: 30px;
-
-  border: 1px solid #333;
-
-  width: 90%;
-  max-width: 550px;
-
-  border-radius: 10px;
-
-  position: relative;
-
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-}
-
-.close-btn {
-  color: #aaa;
-
-  position: absolute;
-  right: 20px;
-  top: 15px;
-
-  font-size: 28px;
-  font-weight: bold;
-
-  cursor: pointer;
-}
-
-.close-btn:hover {
-  color: #fff;
-}
-
-.consultation-modal label {
-  display: block;
-
-  margin-top: 12px;
-  margin-bottom: 5px;
-
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.consultation-modal input,
-.consultation-modal select,
-.consultation-modal textarea {
-  width: 100%;
-
-  padding: 10px;
-
-  background: #1e1e1e;
-
-  border: 1px solid #444;
-
-  color: #fff;
-
-  border-radius: 5px;
-
-  font-size: 14px;
-}
-
-.submit-whatsapp-btn {
-  width: 100%;
-
-  margin-top: 20px;
-
-  background-color: #25D366;
-  color: white;
-
-  padding: 12px;
-
-  border: none;
-  border-radius: 5px;
-
-  font-size: 16px;
-  font-weight: bold;
-
-  cursor: pointer;
-}
-
-.submit-whatsapp-btn:hover {
-  background-color: #20ba5a;
 }
 
 </style>
+
 </head>
 
 <body>
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -743,12 +1055,24 @@ section {
   </div>
 
   <nav>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+
+    <a href="#services">
+      Services
+    </a>
+
+    <a href="#about">
+      About
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
   </nav>
 
 </header>
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -777,6 +1101,8 @@ section {
 
 </section>
 
+<!-- ================= SERVICES ================= -->
+
 <section class="services" id="services">
 
   <div class="section-title">
@@ -798,7 +1124,9 @@ section {
 
       <div class="icon">◎</div>
 
-      <h3>Government Exam Guidance</h3>
+      <h3>
+        Government Exam Guidance
+      </h3>
 
       <p>
         Strategic guidance for UPSC, TNPSC, SSC, Banking and competitive examinations.
@@ -810,7 +1138,9 @@ section {
 
       <div class="icon">↗️</div>
 
-      <h3>Startup Guidance</h3>
+      <h3>
+        Startup Guidance
+      </h3>
 
       <p>
         Transform your idea into a validated, practical and growth-ready venture.
@@ -822,7 +1152,9 @@ section {
 
       <div class="icon">⌘</div>
 
-      <h3>Business Registration</h3>
+      <h3>
+        Business Registration
+      </h3>
 
       <p>
         Navigate MSME, Startup India, Udyam, GST, IEC and company formation with confidence.
@@ -834,7 +1166,9 @@ section {
 
       <div class="icon">◇</div>
 
-      <h3>Idea Validation</h3>
+      <h3>
+        Idea Validation
+      </h3>
 
       <p>
         Challenge assumptions, understand the market and build on a stronger foundation.
@@ -846,7 +1180,9 @@ section {
 
       <div class="icon">◈</div>
 
-      <h3>Funding & Investors</h3>
+      <h3>
+        Funding & Investors
+      </h3>
 
       <p>
         Prepare your business, pitch and vision for the opportunities that can change everything.
@@ -858,7 +1194,9 @@ section {
 
       <div class="icon">✦</div>
 
-      <h3>Training & Mentorship</h3>
+      <h3>
+        Training & Mentorship
+      </h3>
 
       <p>
         Build skills, confidence and the mindset required to make your next move count.
@@ -870,11 +1208,16 @@ section {
 
 </section>
 
+<!-- ================= ABOUT ================= -->
+
 <section class="about" id="about">
 
   <div class="about-visual">
 
-    <img src="image1.png" alt="Muralidharan">
+    <img
+      src="image1.png"
+      alt="Muralidharan"
+    >
 
   </div>
 
@@ -905,21 +1248,30 @@ section {
       <div class="stat">
 
         <strong>01</strong>
-        <small>Clear Vision</small>
+
+        <small>
+          Clear Vision
+        </small>
 
       </div>
 
       <div class="stat">
 
         <strong>∞</strong>
-        <small>Possibilities</small>
+
+        <small>
+          Possibilities
+        </small>
 
       </div>
 
       <div class="stat">
 
         <strong>100%</strong>
-        <small>Commitment</small>
+
+        <small>
+          Commitment
+        </small>
 
       </div>
 
@@ -932,6 +1284,8 @@ section {
   </div>
 
 </section>
+
+<!-- ================= VISION ================= -->
 
 <section class="vision">
 
@@ -948,13 +1302,18 @@ section {
 
     <div class="vision-image">
 
-      <img src="image.png" alt="Muralidharan image">
+      <img
+        src="image.png"
+        alt="Muralidharan image"
+      >
 
     </div>
 
   </div>
 
 </section>
+
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
@@ -995,60 +1354,76 @@ section {
 
   </div>
 
-  <button class="btn" onclick="openConsultationModal()">
-    Book a Consultation 📝
-  </button>
+  <!-- BUTTONS -->
+
+  <div class="contact-actions">
+
+    <button
+      class="btn"
+      onclick="openConsultationModal()"
+    >
+      Book a Consultation 📝
+    </button>
+
+    <button
+      class="btn feedback-main-btn"
+      onclick="openFeedbackMenu()"
+    >
+      Feedback 💬
+    </button>
+
+  </div>
 
 </section>
 
+<!-- ================= ANIMATED END ================= -->
+
 <div class="animated-end"></div>
 
-<div style="
-  padding: 20px 7% 36px;
-  background: linear-gradient(90deg, #020108 0%, #0a0520 100%);
-  text-align: right;
-  color: #f5e8ff;
-  font-size: 12px;
-  line-height: 1.6;
-  border-top: 1px solid rgba(192,132,252,.25);
-">
+<!-- ================= FOOTER ================= -->
 
-  <div style="
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #c084fc;
-    text-shadow: 0 0 8px rgba(192,132,252,.3);
-  ">
+<div class="developer-footer">
+
+  <div class="developer-footer-title">
     Developed by HARISH.V
   </div>
 
-  <div style="
-    margin-top: 4px;
-    font-weight: 500;
-    color: #e9d5ff;
-  ">
+  <div class="developer-footer-contact">
     Contact: 8438008759
   </div>
 
 </div>
 
-<!-- Consultation Form Modal -->
+<!-- ================================================= -->
+<!-- CONSULTATION MODAL -->
+<!-- ================================================= -->
 
-<div id="consultationModal" class="consultation-modal">
+<div
+  id="consultationModal"
+  class="consultation-modal"
+>
 
   <div class="modal-content">
 
-    <span class="close-btn" onclick="closeConsultationModal()">
+    <span
+      class="close-btn"
+      onclick="closeConsultationModal()"
+    >
       &times;
     </span>
 
-    <h2>Book a Consultation</h2>
+    <h2>
+      Book a Consultation
+    </h2>
 
-    <form id="consultationForm" onsubmit="sendToWhatsApp(event)">
+    <form
+      id="consultationForm"
+      onsubmit="sendToWhatsApp(event)"
+    >
 
-      <label for="c_name">Name *</label>
+      <label for="c_name">
+        Name *
+      </label>
 
       <input
         type="text"
@@ -1056,7 +1431,9 @@ section {
         required
       >
 
-      <label for="c_age">Age *</label>
+      <label for="c_age">
+        Age *
+      </label>
 
       <input
         type="number"
@@ -1106,7 +1483,10 @@ section {
 
       </select>
 
-      <div id="groupFieldContainer" style="display: none;">
+      <div
+        id="groupFieldContainer"
+        style="display:none;"
+      >
 
         <label for="c_group">
           If above 12th, Mention Group/Major Studied *
@@ -1216,30 +1596,217 @@ section {
 
 </div>
 
+<!-- ================================================= -->
+<!-- FEEDBACK MENU -->
+<!-- ================================================= -->
+
+<div
+  id="feedbackMenu"
+  class="feedback-menu"
+>
+
+  <div class="feedback-menu-content">
+
+    <span
+      class="close-btn"
+      onclick="closeFeedbackMenu()"
+    >
+      &times;
+    </span>
+
+    <h2>
+      Feedbacks
+    </h2>
+
+    <button
+      class="feedback-option"
+      onclick="openGiveFeedback()"
+    >
+      ✍️ Give Feedback
+    </button>
+
+    <button
+      class="feedback-option"
+      onclick="openSeeFeedbacks()"
+    >
+      👀 See Feedbacks
+    </button>
+
+  </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- GIVE FEEDBACK MODAL -->
+<!-- ================================================= -->
+
+<div
+  id="giveFeedbackModal"
+  class="feedback-modal"
+>
+
+  <div class="feedback-form-content">
+
+    <span
+      class="close-btn"
+      onclick="closeGiveFeedback()"
+    >
+      &times;
+    </span>
+
+    <h2>
+      Give Your Feedback
+    </h2>
+
+    <form
+      id="feedbackForm"
+      onsubmit="submitFeedback(event)"
+    >
+
+      <label for="feedbackName">
+        Name *
+      </label>
+
+      <input
+        type="text"
+        id="feedbackName"
+        placeholder="Enter your name"
+        required
+      >
+
+      <label for="feedbackPhone">
+        Phone Number *
+      </label>
+
+      <input
+        type="tel"
+        id="feedbackPhone"
+        placeholder="Enter your phone number"
+        pattern="[0-9+\-\s]{7,20}"
+        required
+      >
+
+      <label for="feedbackText">
+        Your Feedback *
+      </label>
+
+      <textarea
+        id="feedbackText"
+        rows="6"
+        placeholder="Write your feedback..."
+        maxlength="1000"
+        required
+      ></textarea>
+
+      <button
+        type="submit"
+        class="submit-whatsapp-btn"
+        id="feedbackSubmitBtn"
+      >
+        Submit Feedback 🚀
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- SEE FEEDBACK MODAL -->
+<!-- ================================================= -->
+
+<div
+  id="seeFeedbackModal"
+  class="feedback-modal"
+>
+
+  <div class="feedback-list-content">
+
+    <span
+      class="close-btn"
+      onclick="closeSeeFeedbacks()"
+    >
+      &times;
+    </span>
+
+    <h2>
+      What People Say 💜
+    </h2>
+
+    <div
+      id="feedbackList"
+      class="feedback-list"
+    >
+
+      <div class="feedback-loading">
+        Loading feedbacks...
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
 <script>
+
+/* ================================================= */
+/* SUPABASE CONFIG */
+/* ================================================= */
+
 const SUPABASE_URL =
   "https://grihylarnngutarlezdm.supabase.co";
 
 const SUPABASE_PUBLISHABLE_KEY =
   "sb_publishable_Bbz2Ivx4EZ5GljQx1RFGVw_Ktag4lN0";
+
+
+/* ================================================= */
+/* CONSULTATION MODAL */
+/* ================================================= */
+
 function openConsultationModal() {
-  document.getElementById("consultationModal").style.display = "block";
+
+  document.getElementById(
+    "consultationModal"
+  ).style.display = "flex";
+
 }
 
 function closeConsultationModal() {
-  document.getElementById("consultationModal").style.display = "none";
+
+  document.getElementById(
+    "consultationModal"
+  ).style.display = "none";
+
 }
+
+
+/* ================================================= */
+/* EDUCATION GROUP */
+/* ================================================= */
 
 function toggleEducationGroup() {
 
   const edu =
-    document.getElementById("c_education").value;
+    document.getElementById(
+      "c_education"
+    ).value;
 
   const groupContainer =
-    document.getElementById("groupFieldContainer");
+    document.getElementById(
+      "groupFieldContainer"
+    );
 
   const groupInput =
-    document.getElementById("c_group");
+    document.getElementById(
+      "c_group"
+    );
 
   if (
     edu === "Undergraduate" ||
@@ -1247,90 +1814,128 @@ function toggleEducationGroup() {
     edu === "Other"
   ) {
 
-    groupContainer.style.display = "block";
+    groupContainer.style.display =
+      "block";
+
     groupInput.required = true;
 
-  } else {
+  }
 
-    groupContainer.style.display = "none";
+  else {
+
+    groupContainer.style.display =
+      "none";
+
     groupInput.required = false;
+
     groupInput.value = "";
 
   }
 
 }
 
+
+/* ================================================= */
+/* SEND CONSULTATION TO WHATSAPP */
+/* ================================================= */
+
 function sendToWhatsApp(event) {
 
   event.preventDefault();
 
-  /* Get customer information */
-
   const name =
-    document.getElementById("c_name").value.trim();
+    document.getElementById(
+      "c_name"
+    ).value.trim();
 
   const age =
-    document.getElementById("c_age").value.trim();
+    document.getElementById(
+      "c_age"
+    ).value.trim();
 
   const education =
-    document.getElementById("c_education").value;
+    document.getElementById(
+      "c_education"
+    ).value;
 
   const group =
-    document.getElementById("c_group").value.trim();
+    document.getElementById(
+      "c_group"
+    ).value.trim();
 
   const domain =
-    document.getElementById("c_domain").value || "N/A";
+    document.getElementById(
+      "c_domain"
+    ).value || "N/A";
 
   const department =
-    document.getElementById("c_department").value.trim() || "N/A";
+    document.getElementById(
+      "c_department"
+    ).value.trim() || "N/A";
 
   const govExams =
-    document.getElementById("c_govexams").value;
+    document.getElementById(
+      "c_govexams"
+    ).value;
 
   const address =
-    document.getElementById("c_address").value.trim();
+    document.getElementById(
+      "c_address"
+    ).value.trim();
 
   const phone =
-    document.getElementById("c_phone").value.trim();
+    document.getElementById(
+      "c_phone"
+    ).value.trim();
 
   const message =
-    document.getElementById("c_message").value.trim() || "N/A";
+    document.getElementById(
+      "c_message"
+    ).value.trim() || "N/A";
 
-  /* Create WhatsApp message */
 
   let text =
-    `*New Consultation Request* 📝\n\n` +
-    `*Name:* ${name}\n` +
-    `*Age:* ${age}\n` +
-    `*Education:* ${education}\n`;
+
+    *New Consultation Request* 📝\n\n +
+
+    *Name:* ${name}\n +
+
+    *Age:* ${age}\n +
+
+    *Education:* ${education}\n;
+
 
   if (group) {
 
     text +=
-      `*Group/Major:* ${group}\n`;
+      *Group/Major:* ${group}\n;
 
   }
 
-  text +=
-    `*Interested Domain:* ${domain}\n` +
-    `*Department:* ${department}\n` +
-    `*Govt Exams Interest:* ${govExams}\n` +
-    `*Address:* ${address}\n` +
-    `*Phone:* ${phone}\n` +
-    `*Words:* ${message}`;
 
-  /* Encode message for URL */
+  text +=
+
+    *Interested Domain:* ${domain}\n +
+
+    *Department:* ${department}\n +
+
+    *Govt Exams Interest:* ${govExams}\n +
+
+    *Address:* ${address}\n +
+
+    *Phone:* ${phone}\n +
+
+    *Words:* ${message};
+
 
   const encodedText =
     encodeURIComponent(text);
 
-  /* Your WhatsApp number
-     India country code = 91 */
 
   const whatsappUrl =
-    `https://wa.me/918807663840?text=${encodedText}`;
 
-  /* Open WhatsApp */
+    https://wa.me/918807663840?text=${encodedText};
+
 
   window.open(
     whatsappUrl,
@@ -1339,37 +1944,453 @@ function sendToWhatsApp(event) {
 
 }
 
-/* Close modal when clicking outside it */
 
-window.onclick = function(event) {
+/* ================================================= */
+/* FEEDBACK MENU */
+/* ================================================= */
 
-  const modal =
-    document.getElementById("consultationModal");
+function openFeedbackMenu() {
 
-  if (event.target === modal) {
+  document.getElementById(
+    "feedbackMenu"
+  ).style.display = "flex";
 
-    closeConsultationModal();
+}
+
+function closeFeedbackMenu() {
+
+  document.getElementById(
+    "feedbackMenu"
+  ).style.display = "none";
+
+}
+
+
+/* ================================================= */
+/* GIVE FEEDBACK */
+/* ================================================= */
+
+function openGiveFeedback() {
+
+  closeFeedbackMenu();
+
+  document.getElementById(
+    "giveFeedbackModal"
+  ).style.display = "flex";
+
+}
+
+function closeGiveFeedback() {
+
+  document.getElementById(
+    "giveFeedbackModal"
+  ).style.display = "none";
+
+}
+
+
+/* ================================================= */
+/* SUBMIT FEEDBACK TO SUPABASE */
+/* ================================================= */
+
+async function submitFeedback(event) {
+
+  event.preventDefault();
+
+
+  const name =
+    document.getElementById(
+      "feedbackName"
+    ).value.trim();
+
+  const phone =
+    document.getElementById(
+      "feedbackPhone"
+    ).value.trim();
+
+  const feedback =
+    document.getElementById(
+      "feedbackText"
+    ).value.trim();
+
+  const button =
+    document.getElementById(
+      "feedbackSubmitBtn"
+    );
+
+
+  if (!name || !phone || !feedback) {
+
+    alert(
+      "Please fill all required fields."
+    );
+
+    return;
 
   }
 
-};
+
+  button.disabled = true;
+
+  button.innerText =
+    "Submitting...";
+
+
+  try {
+
+    const response = await fetch(
+
+      ${SUPABASE_URL}/rest/v1/feedbacks,
+
+      {
+
+        method: "POST",
+
+        headers: {
+
+          "Content-Type":
+            "application/json",
+
+          "apikey":
+            SUPABASE_PUBLISHABLE_KEY,
+
+          "Authorization":
+            Bearer ${SUPABASE_PUBLISHABLE_KEY},
+
+          "Prefer":
+            "return=minimal"
+
+        },
+
+        body: JSON.stringify({
+
+          name: name,
+
+          phone: phone,
+
+          feedback: feedback
+
+        })
+
+      }
+
+    );
+
+
+    if (!response.ok) {
+
+      const errorText =
+        await response.text();
+
+      console.error(
+        "Supabase error:",
+        errorText
+      );
+
+      throw new Error(
+        "Database submission failed"
+      );
+
+    }
+
+
+    alert(
+      "Thank you! Your feedback has been submitted successfully. 💜"
+    );
+
+
+    document.getElementById(
+      "feedbackForm"
+    ).reset();
+
+
+    closeGiveFeedback();
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+    alert(
+      "Sorry, your feedback could not be submitted. Please try again."
+    );
+
+  }
+
+  finally {
+
+    button.disabled = false;
+
+    button.innerText =
+      "Submit Feedback 🚀";
+
+  }
+
+}
+
+
+/* ================================================= */
+/* SEE FEEDBACKS */
+/* ================================================= */
+
+async function openSeeFeedbacks() {
+
+  closeFeedbackMenu();
+
+  document.getElementById(
+    "seeFeedbackModal"
+  ).style.display = "flex";
+
+
+  const list =
+    document.getElementById(
+      "feedbackList"
+    );
+
+
+  list.innerHTML =
+
+    `<div class="feedback-loading">
+      Loading feedbacks... ⏳
+    </div>`;
+
+
+  try {
+
+    const response = await fetch(
+
+      ${SUPABASE_URL}/rest/v1/feedbacks?select=id,name,feedback,created_at&order=created_at.desc,
+
+      {
+
+        method: "GET",
+
+        headers: {
+
+          "apikey":
+            SUPABASE_PUBLISHABLE_KEY,
+
+          "Authorization":
+            Bearer ${SUPABASE_PUBLISHABLE_KEY}
+
+        }
+
+      }
+
+    );
+
+
+    if (!response.ok) {
+
+      const errorText =
+        await response.text();
+
+      console.error(
+        "Supabase error:",
+        errorText
+      );
+
+      throw new Error(
+        "Could not load feedbacks"
+      );
+
+    }
+
+
+    const feedbacks =
+      await response.json();
+
+
+    if (
+      !feedbacks ||
+      feedbacks.length === 0
+    ) {
+
+      list.innerHTML =
+
+        `<div class="no-feedback">
+          No feedbacks yet. Be the first to share your experience! 💜
+        </div>`;
+
+      return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    feedbacks.forEach(
+      function(item) {
+
+        const card =
+          document.createElement(
+            "div"
+          );
+
+        card.className =
+          "feedback-card";
+
+
+        const name =
+          document.createElement(
+            "div"
+          );
+
+        name.className =
+          "feedback-card-name";
+
+        name.textContent =
+          item.name;
+
+
+        const date =
+          document.createElement(
+            "div"
+          );
+
+        date.className =
+          "feedback-card-date";
+
+
+        if (item.created_at) {
+
+          const dateObject =
+            new Date(
+              item.created_at
+            );
+
+          date.textContent =
+            dateObject.toLocaleDateString(
+              "en-IN",
+              {
+                day: "numeric",
+                month: "short",
+                year: "numeric"
+              }
+            );
+
+        }
+
+
+        const text =
+          document.createElement(
+            "div"
+          );
+
+        text.className =
+          "feedback-card-text";
+
+        text.textContent =
+          item.feedback;
+
+
+        card.appendChild(name);
+
+        card.appendChild(date);
+
+        card.appendChild(text);
+
+        list.appendChild(card);
+
+      }
+    );
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+    list.innerHTML =
+
+      `<div class="no-feedback">
+        Unable to load feedbacks. Please try again later.
+      </div>`;
+
+  }
+
+}
+
+
+function closeSeeFeedbacks() {
+
+  document.getElementById(
+    "seeFeedbackModal"
+  ).style.display = "none";
+
+}
+
+
+/* ================================================= */
+/* CLOSE MODALS WHEN CLICKING OUTSIDE */
+/* ================================================= */
+
+window.addEventListener(
+  "click",
+  function(event) {
+
+    const consultation =
+      document.getElementById(
+        "consultationModal"
+      );
+
+    const feedbackMenu =
+      document.getElementById(
+        "feedbackMenu"
+      );
+
+    const giveFeedback =
+      document.getElementById(
+        "giveFeedbackModal"
+      );
+
+    const seeFeedback =
+      document.getElementById(
+        "seeFeedbackModal"
+      );
+
+
+    if (
+      event.target === consultation
+    ) {
+
+      closeConsultationModal();
+
+    }
+
+
+    if (
+      event.target === feedbackMenu
+    ) {
+
+      closeFeedbackMenu();
+
+    }
+
+
+    if (
+      event.target === giveFeedback
+    ) {
+
+      closeGiveFeedback();
+
+    }
+
+
+    if (
+      event.target === seeFeedback
+    ) {
+
+      closeSeeFeedbacks();
+
+    }
+
+  }
+);
 
 </script>
-<!-- Feedback Menu -->
-<div id="feedbackMenu" class="feedback-menu">
-  <div class="feedback-menu-content">
-    <span class="close-btn" onclick="closeFeedbackMenu()">&times;</span>
 
-    <h2>Feedbacks</h2>
-
-    <button class="feedback-option" onclick="openGiveFeedback()">
-      ✍️ Give Feedback
-    </button>
-
-    <button class="feedback-option" onclick="openSeeFeedbacks()">
-      👀 See Feedbacks
-    </button>
-  </div>
-</div>
 </body>
 </html>
