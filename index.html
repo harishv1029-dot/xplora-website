@@ -7,6 +7,7 @@
 <title>Xplora | Build What Comes Next</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap');
 
 :root {
@@ -16,8 +17,6 @@
   --cream: #09051a;
   --muted: #b8b0d0;
   --line: rgba(180,140,255,.22);
-  --blue: #2563eb;
-  --purple: #8b5cf6;
 }
 
 * {
@@ -53,23 +52,20 @@ body:before {
   background-position: 10px 20px, 70px 90px;
 }
 
-/* ============================= */
-/* HEADER */
-/* ============================= */
+/* ================= HEADER ================= */
 
 header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 5;
+  z-index: 20;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   padding: 28px 7%;
-  color: white;
 }
 
 .logo {
@@ -90,9 +86,7 @@ header {
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   background-clip: text;
-  color: transparent;
 }
 
 nav a {
@@ -109,9 +103,7 @@ nav a:hover {
   color: #c084fc;
 }
 
-/* ============================= */
-/* HERO */
-/* ============================= */
+/* ================= HERO ================= */
 
 .hero {
   min-height: 850px;
@@ -119,20 +111,17 @@ nav a:hover {
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
   gap: 70px;
 
-  color: white;
   position: relative;
   overflow: hidden;
 
   background:
     linear-gradient(
       90deg,
-      rgba(3,1,12,.94) 0%,
-      rgba(20,5,55,.78) 45%,
-      rgba(10,20,70,.35) 100%
+      rgba(3,1,12,.94),
+      rgba(20,5,55,.78),
+      rgba(10,20,70,.35)
     ),
     radial-gradient(
       circle at 75% 20%,
@@ -143,26 +132,10 @@ nav a:hover {
     center/cover;
 }
 
-.hero:after {
-  content: "X";
-
-  position: absolute;
-  right: -40px;
-  bottom: -150px;
-
-  font-family: "Playfair Display", serif;
-  font-size: 600px;
-  line-height: .8;
-
-  color: rgba(139,92,246,.12);
-
-  pointer-events: none;
-}
-
 .hero-content {
   max-width: 720px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .eyebrow {
@@ -180,12 +153,9 @@ nav a:hover {
   line-height: .92;
   letter-spacing: -3px;
   margin-bottom: 32px;
-  text-shadow: 0 0 30px rgba(139,92,246,.25);
 }
 
 .hero h1 span {
-  display: inline-block;
-
   background: linear-gradient(
     90deg,
     #fbbf24,
@@ -196,10 +166,6 @@ nav a:hover {
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  background-clip: text;
-  color: transparent;
-
   font-style: italic;
 }
 
@@ -211,16 +177,12 @@ nav a:hover {
   margin-bottom: 35px;
 }
 
-/* ============================= */
-/* BUTTON */
-/* ============================= */
+/* ================= BUTTON ================= */
 
 .btn {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   gap: 12px;
 
   padding: 17px 25px;
@@ -232,66 +194,26 @@ nav a:hover {
   );
 
   color: white;
-
   text-decoration: none;
-
   border-radius: 6px;
-
   font-weight: 700;
 
   box-shadow: 0 0 25px rgba(124,58,237,.45);
 
   transition: .3s;
-
   border: none;
-
   cursor: pointer;
 }
 
 .btn:hover {
-  background: linear-gradient(
-    135deg,
-    #c084fc,
-    #60a5fa
-  );
-
-  color: white;
-
   transform: translateY(-4px);
-
   box-shadow: 0 0 35px rgba(96,165,250,.7);
 }
 
-/* ============================= */
-/* GENERAL SECTIONS */
-/* ============================= */
+/* ================= GENERAL ================= */
 
 section {
   padding: 120px 7%;
-}
-
-.vision-image {
-  margin-top: 30px;
-
-  width: 100%;
-  max-width: 700px;
-
-  overflow: hidden;
-
-  border-radius: 24px;
-
-  border: 1px solid rgba(192,132,252,.35);
-
-  box-shadow: 0 0 30px rgba(124,58,237,.25);
-}
-
-.vision-image img {
-  width: 100%;
-  height: auto;
-
-  display: block;
-
-  object-fit: cover;
 }
 
 .section-title {
@@ -299,17 +221,10 @@ section {
   margin-bottom: 65px;
 }
 
-.section-title .eyebrow {
-  color: #c084fc;
-}
-
 .section-title h2 {
   font-family: "Playfair Display", Georgia, serif;
-
   font-size: clamp(45px, 6vw, 78px);
-
   line-height: .98;
-
   letter-spacing: -2px;
 }
 
@@ -318,9 +233,7 @@ section {
   font-style: italic;
 }
 
-/* ============================= */
-/* SERVICES */
-/* ============================= */
+/* ================= SERVICES ================= */
 
 .services {
   background:
@@ -339,23 +252,16 @@ section {
 
 .service-grid {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 1px;
-
   background: var(--line);
-
   border: 1px solid var(--line);
 }
 
 .card {
   min-height: 280px;
-
   padding: 38px;
-
   background: rgba(12,7,30,.82);
-
   transition: .35s;
 }
 
@@ -366,29 +272,17 @@ section {
     #071b4d
   );
 
-  color: white;
-
   transform: scale(1.02);
-
   position: relative;
-
   z-index: 2;
 
   box-shadow: 0 0 30px rgba(124,58,237,.35);
 }
 
-.card:hover p {
-  color: #c4b5fd;
-}
-
 .icon {
   font-size: 42px;
-
   color: #a855f7;
-
   margin-bottom: 25px;
-
-  text-shadow: 0 0 15px #7c3aed;
 }
 
 .card h3 {
@@ -401,15 +295,11 @@ section {
   line-height: 1.7;
 }
 
-/* ============================= */
-/* ABOUT */
-/* ============================= */
+/* ================= ABOUT ================= */
 
 .about {
   display: flex;
-
   align-items: center;
-
   gap: 100px;
 
   background:
@@ -434,29 +324,19 @@ section {
 .about img {
   width: 50%;
   height: 300px;
-
   object-fit: cover;
   object-position: top;
-
-  filter: saturate(.8) contrast(1.1);
 }
 
 .about-visual:before {
   content: "";
-
   position: absolute;
-
-  width: 50%;
-  height: 300px;
-
+  width: 100%;
+  height: 100%;
   border: 2px solid #8b5cf6;
-
   top: 20px;
   left: 20px;
-
   z-index: -1;
-
-  box-shadow: 0 0 25px rgba(139,92,246,.5);
 }
 
 .about-text {
@@ -465,18 +345,13 @@ section {
 
 .about-text h2 {
   font-family: "Playfair Display", Georgia, serif;
-
   font-size: clamp(45px, 5vw, 72px);
-
   line-height: 1;
-
   margin-bottom: 30px;
-
   color: #8B5CF6;
 }
 
 .about-text h2 span {
-  color: #8B5CF6;
   font-style: italic;
 }
 
@@ -494,46 +369,29 @@ section {
 
 .stat strong {
   display: block;
-
   font-family: "Playfair Display", serif;
-
   font-size: 42px;
-
   color: #c084fc;
 }
 
 .stat small {
   color: var(--muted);
-
   font-size: 11px;
-
   text-transform: uppercase;
-
   letter-spacing: 1px;
 }
 
-/* ============================= */
-/* VISION */
-/* ============================= */
+/* ================= VISION ================= */
 
 .vision {
   min-height: 500px;
-
-  color: white;
-
   position: relative;
-
   overflow: hidden;
 
   background:
     linear-gradient(
       rgba(5,2,18,.78),
       rgba(5,2,18,.82)
-    ),
-    radial-gradient(
-      circle at 50% 20%,
-      rgba(96,165,250,.35),
-      transparent 40%
     ),
     url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2200&q=85")
     center/cover fixed;
@@ -545,9 +403,7 @@ section {
 
 .vision h2 {
   font-family: "Playfair Display", serif;
-
   font-size: clamp(48px, 7vw, 90px);
-
   line-height: .95;
 }
 
@@ -556,9 +412,21 @@ section {
   font-style: italic;
 }
 
-/* ============================= */
-/* CONTACT */
-/* ============================= */
+.vision-image {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(192,132,252,.35);
+}
+
+.vision-image img {
+  width: 100%;
+  display: block;
+}
+
+/* ================= CONTACT ================= */
 
 .contact {
   background: linear-gradient(
@@ -568,65 +436,15 @@ section {
     #090014
   );
 
-  color: white;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   gap: 40px;
-}
-
-.contact-details {
-  margin-top: 24px;
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 16px;
-}
-
-.contact-details a {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 14px 20px;
-
-  border: 1px solid rgba(255,255,255,.25);
-
-  border-radius: 999px;
-
-  color: white;
-
-  text-decoration: none;
-
-  background: rgba(255,255,255,.12);
-
-  font-size: 18px;
-
-  font-weight: 700;
-
-  box-shadow: 0 8px 24px rgba(0,0,0,.2);
-
-  transition: .3s;
-}
-
-.contact-details a:hover {
-  background: rgba(255,255,255,.22);
-  transform: translateY(-2px);
 }
 
 .contact h2 {
   font-family: "Playfair Display", serif;
-
   font-size: clamp(42px, 5vw, 70px);
-
   line-height: .95;
 }
 
@@ -635,25 +453,35 @@ section {
   color: rgba(255,255,255,.8);
 }
 
-.contact .btn {
-  background: white;
-  color: #16052d;
+.contact-details {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-/* ============================= */
-/* CONTACT ACTION BUTTONS */
-/* ============================= */
+.contact-details a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 20px;
+
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 999px;
+
+  color: white;
+  text-decoration: none;
+  background: rgba(255,255,255,.12);
+
+  font-weight: 700;
+}
 
 .contact-actions {
   display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
   gap: 14px;
-
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .feedback-main-btn {
@@ -661,22 +489,14 @@ section {
     135deg,
     #7c3aed,
     #2563eb
-  ) !important;
-
-  color: white !important;
+  );
 }
 
-/* ============================= */
-/* ANIMATED END */
-/* ============================= */
+/* ================= ANIMATION ================= */
 
 .animated-end {
-  position: relative;
-
   height: 140px;
-
   margin-top: 20px;
-
   background:
     linear-gradient(
       90deg,
@@ -685,57 +505,19 @@ section {
       rgba(192,132,252,.18),
       rgba(52,211,153,.18)
     );
-
-  overflow: hidden;
 }
 
-.animated-end::before {
-  content: "";
-
-  position: absolute;
-
-  inset: -20%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #fbbf24,
-      #60a5fa,
-      #c084fc,
-      #34d399
-    );
-
-  filter: blur(50px);
-
-  opacity: .45;
-
-  animation: shimmer 4s linear infinite;
-}
-
-@keyframes shimmer {
-
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
-
-}
-
-/* ============================= */
-/* MODAL COMMON */
-/* ============================= */
+/* ================= MODALS ================= */
 
 .consultation-modal,
 .feedback-menu,
 .feedback-form-modal,
-.feedback-list-modal {
+.feedback-list-modal,
+.feedback-details-modal {
+
   display: none;
 
   position: fixed;
-
   inset: 0;
 
   z-index: 3000;
@@ -745,7 +527,6 @@ section {
   background: rgba(0,0,0,.78);
 
   align-items: flex-start;
-
   justify-content: center;
 
   padding: 40px 15px;
@@ -754,7 +535,9 @@ section {
 .modal-content,
 .feedback-menu-content,
 .feedback-form-content,
-.feedback-list-content {
+.feedback-list-content,
+.feedback-details-content {
+
   background: #121212;
 
   color: #e9d5ff;
@@ -766,21 +549,18 @@ section {
   border: 1px solid rgba(192,132,252,.35);
 
   width: 90%;
-
   max-width: 550px;
 
   border-radius: 14px;
 
   position: relative;
 
-  box-shadow:
-    0 0 40px rgba(124,58,237,.35);
+  box-shadow: 0 0 40px rgba(124,58,237,.35);
 
   animation: modalAppear .25s ease;
 }
 
 @keyframes modalAppear {
-
   from {
     opacity: 0;
     transform: translateY(-20px) scale(.98);
@@ -790,63 +570,45 @@ section {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-
 }
 
 .modal-content h2,
 .feedback-menu-content h2,
 .feedback-form-content h2,
-.feedback-list-content h2 {
+.feedback-list-content h2,
+.feedback-details-content h2 {
+
   font-family: "Playfair Display", serif;
-
   color: #c084fc;
-
   margin-bottom: 22px;
 }
 
-/* ============================= */
-/* CLOSE BUTTON */
-/* ============================= */
+/* ================= CLOSE ================= */
 
 .close-btn {
   color: #aaa;
-
   position: absolute;
-
   right: 20px;
-
   top: 12px;
 
   font-size: 30px;
-
   font-weight: bold;
 
   cursor: pointer;
-
-  z-index: 10;
-
-  line-height: 1;
 }
 
 .close-btn:hover {
-  color: #fff;
+  color: white;
 }
 
-/* ============================= */
-/* CONSULTATION FORM */
-/* ============================= */
+/* ================= FORM ================= */
 
 .consultation-modal label,
 .feedback-form-content label {
   display: block;
-
   margin-top: 12px;
-
   margin-bottom: 5px;
-
   font-size: 14px;
-
-  font-weight: 500;
 }
 
 .consultation-modal input,
@@ -854,6 +616,7 @@ section {
 .consultation-modal textarea,
 .feedback-form-content input,
 .feedback-form-content textarea {
+
   width: 100%;
 
   padding: 11px;
@@ -862,7 +625,7 @@ section {
 
   border: 1px solid #444;
 
-  color: #fff;
+  color: white;
 
   border-radius: 6px;
 
@@ -876,62 +639,47 @@ section {
 .consultation-modal textarea:focus,
 .feedback-form-content input:focus,
 .feedback-form-content textarea:focus {
+
   border-color: #8b5cf6;
 
   box-shadow: 0 0 10px rgba(139,92,246,.25);
 }
 
 .submit-whatsapp-btn {
-  width: 100%;
 
+  width: 100%;
   margin-top: 20px;
 
-  background-color: #25D366;
-
+  background: #25D366;
   color: white;
 
   padding: 12px;
 
   border: none;
-
   border-radius: 6px;
 
   font-size: 16px;
-
   font-weight: bold;
 
   cursor: pointer;
 }
 
-.submit-whatsapp-btn:hover {
-  background-color: #20ba5a;
-}
-
-/* ============================= */
-/* FEEDBACK MENU */
-/* ============================= */
+/* ================= FEEDBACK MENU ================= */
 
 .feedback-menu-content {
   max-width: 420px;
-
   text-align: center;
-
   margin-top: 100px;
 }
 
-.feedback-menu-content h2 {
-  font-size: 34px;
-}
-
 .feedback-option {
+
   width: 100%;
 
   padding: 14px;
-
   margin-top: 12px;
 
   border: 1px solid rgba(192,132,252,.35);
-
   border-radius: 7px;
 
   background: linear-gradient(
@@ -943,11 +691,9 @@ section {
   color: white;
 
   font-size: 16px;
-
   font-weight: 700;
 
   cursor: pointer;
-
   transition: .3s;
 }
 
@@ -963,15 +709,14 @@ section {
   );
 }
 
-/* ============================= */
-/* FEEDBACK FORM */
-/* ============================= */
+/* ================= FEEDBACK FORM ================= */
 
 .feedback-form-content {
   max-width: 520px;
 }
 
 .feedback-submit-btn {
+
   width: 100%;
 
   margin-top: 20px;
@@ -979,7 +724,6 @@ section {
   padding: 13px;
 
   border: none;
-
   border-radius: 7px;
 
   background: linear-gradient(
@@ -991,25 +735,18 @@ section {
   color: white;
 
   font-size: 16px;
-
   font-weight: 700;
 
   cursor: pointer;
 }
 
-.feedback-submit-btn:hover {
-  transform: translateY(-2px);
-
-  box-shadow: 0 0 25px rgba(124,58,237,.5);
-}
-
 .feedback-submit-btn:disabled {
   opacity: .6;
-  cursor: not-allowed;
-  transform: none;
+  cursor: wait;
 }
 
 .feedback-status {
+
   margin-top: 15px;
 
   padding: 10px;
@@ -1023,19 +760,17 @@ section {
   text-align: center;
 }
 
-/* ============================= */
-/* FEEDBACK LIST */
-/* ============================= */
+/* ================= FEEDBACK LIST ================= */
 
 .feedback-list-content {
   max-width: 700px;
 }
 
 .feedback-list {
+
   margin-top: 20px;
 
   display: flex;
-
   flex-direction: column;
 
   gap: 15px;
@@ -1047,7 +782,10 @@ section {
   padding-right: 5px;
 }
 
+/* THIS IS THE PARTICULAR FEEDBACK CARD */
+
 .feedback-card {
+
   background: linear-gradient(
     135deg,
     #160b35,
@@ -1061,9 +799,29 @@ section {
   padding: 18px;
 
   box-shadow: 0 5px 20px rgba(0,0,0,.2);
+
+  cursor: pointer;
+
+  transition: .25s;
+
+  user-select: none;
+}
+
+.feedback-card:hover {
+
+  transform: translateY(-3px);
+
+  border-color: rgba(192,132,252,.6);
+
+  box-shadow: 0 0 22px rgba(139,92,246,.35);
+}
+
+.feedback-card:active {
+  transform: scale(.99);
 }
 
 .feedback-card-name {
+
   color: #c084fc;
 
   font-size: 18px;
@@ -1074,6 +832,7 @@ section {
 }
 
 .feedback-card-date {
+
   color: #8f86a8;
 
   font-size: 11px;
@@ -1082,6 +841,7 @@ section {
 }
 
 .feedback-card-text {
+
   color: #eee;
 
   line-height: 1.7;
@@ -1089,7 +849,20 @@ section {
   word-break: break-word;
 }
 
-.feedback-empty {
+.feedback-card-hint {
+
+  margin-top: 12px;
+
+  color: #8f86a8;
+
+  font-size: 11px;
+
+  font-style: italic;
+}
+
+.feedback-empty,
+.feedback-loading {
+
   text-align: center;
 
   color: #aaa;
@@ -1097,26 +870,69 @@ section {
   padding: 30px 10px;
 }
 
-.feedback-loading {
-  text-align: center;
+/* ================= FEEDBACK DETAILS ================= */
+
+.feedback-details-content {
+  max-width: 520px;
+}
+
+.feedback-detail-box {
+
+  margin-top: 12px;
+
+  padding: 14px 16px;
+
+  background: #1c1825;
+
+  border: 1px solid rgba(192,132,252,.2);
+
+  border-radius: 9px;
+}
+
+.feedback-detail-label {
+
+  display: block;
 
   color: #c084fc;
 
-  padding: 30px;
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 6px;
 }
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
+.feedback-detail-value {
+
+  color: #fff;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+
+  word-break: break-word;
+}
+
+.feedback-detail-feedback {
+
+  white-space: pre-wrap;
+}
+
+/* ================= FOOTER ================= */
 
 .site-footer {
+
   padding: 20px 7% 36px;
 
   background:
     linear-gradient(
       90deg,
-      #020108 0%,
-      #0a0520 100%
+      #020108,
+      #0a0520
     );
 
   text-align: right;
@@ -1127,11 +943,11 @@ section {
 
   line-height: 1.6;
 
-  border-top:
-    1px solid rgba(192,132,252,.25);
+  border-top: 1px solid rgba(192,132,252,.25);
 }
 
 .site-footer-title {
+
   font-size: 13px;
 
   font-weight: 700;
@@ -1141,24 +957,15 @@ section {
   text-transform: uppercase;
 
   color: #c084fc;
-
-  text-shadow:
-    0 0 8px rgba(192,132,252,.3);
 }
 
 .site-footer-contact {
   margin-top: 4px;
-
-  font-weight: 500;
-
-  color: #e9d5ff;
 }
 
-/* ============================= */
-/* MOBILE */
-/* ============================= */
+/* ================= MOBILE ================= */
 
-@media(max-width: 800px) {
+@media(max-width:800px) {
 
   nav {
     display: none;
@@ -1166,16 +973,7 @@ section {
 
   .hero {
     min-height: auto;
-
     padding-top: 150px;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .hero h1 {
-    letter-spacing: -2px;
   }
 
   .service-grid {
@@ -1184,7 +982,6 @@ section {
 
   .about {
     flex-direction: column;
-
     gap: 60px;
   }
 
@@ -1202,20 +999,16 @@ section {
 
   .stats {
     justify-content: center;
-
     gap: 25px;
   }
 
   .contact {
     flex-direction: column;
-
     align-items: flex-start;
   }
 
   .contact-actions {
     width: 100%;
-
-    justify-content: flex-start;
   }
 
   .contact-actions .btn {
@@ -1225,12 +1018,11 @@ section {
   .modal-content,
   .feedback-menu-content,
   .feedback-form-content,
-  .feedback-list-content {
+  .feedback-list-content,
+  .feedback-details-content {
+
     width: 95%;
-
     padding: 25px 20px;
-
-    margin-top: 20px;
   }
 
   .feedback-menu-content {
@@ -1240,15 +1032,15 @@ section {
   .site-footer {
     text-align: center;
   }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- ============================= -->
-<!-- HEADER -->
-<!-- ============================= -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -1265,9 +1057,7 @@ section {
 </header>
 
 
-<!-- ============================= -->
-<!-- HERO -->
-<!-- ============================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -1297,9 +1087,7 @@ section {
 </section>
 
 
-<!-- ============================= -->
-<!-- SERVICES -->
-<!-- ============================= -->
+<!-- ================= SERVICES ================= -->
 
 <section class="services" id="services">
 
@@ -1354,7 +1142,7 @@ section {
       <div class="icon">◈</div>
       <h3>Funding & Investors</h3>
       <p>
-        Prepare your business, pitch and vision for the opportunities that can change everything.
+        Prepare your business, pitch and vision for opportunities that can change everything.
       </p>
     </div>
 
@@ -1371,18 +1159,13 @@ section {
 </section>
 
 
-<!-- ============================= -->
-<!-- ABOUT -->
-<!-- ============================= -->
+<!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
 
   <div class="about-visual">
 
-    <img
-      src="image1.png"
-      alt="Muralidharan"
-    >
+    <img src="image1.png" alt="Muralidharan">
 
   </div>
 
@@ -1405,7 +1188,7 @@ section {
 
     <p>
       Great journeys are rarely built alone. At Xplora, we believe your future
-      should not be left to chance. Every legendary move starts with the right conversation.
+      should not be left to chance.
     </p>
 
     <div class="stats">
@@ -1436,9 +1219,7 @@ section {
 </section>
 
 
-<!-- ============================= -->
-<!-- VISION -->
-<!-- ============================= -->
+<!-- ================= VISION ================= -->
 
 <section class="vision">
 
@@ -1455,10 +1236,7 @@ section {
 
     <div class="vision-image">
 
-      <img
-        src="image.png"
-        alt="Muralidharan image"
-      >
+      <img src="image.png" alt="Muralidharan image">
 
     </div>
 
@@ -1467,9 +1245,7 @@ section {
 </section>
 
 
-<!-- ============================= -->
-<!-- CONTACT -->
-<!-- ============================= -->
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
@@ -1495,7 +1271,7 @@ section {
         target="_blank"
         rel="noopener noreferrer"
       >
-        💬 +91 8807663840
+        💬 WhatsApp
       </a>
 
       <a
@@ -1534,16 +1310,10 @@ section {
 </section>
 
 
-<!-- ============================= -->
-<!-- ANIMATED END -->
-<!-- ============================= -->
-
 <div class="animated-end"></div>
 
 
-<!-- ============================= -->
-<!-- FOOTER -->
-<!-- ============================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer class="site-footer">
 
@@ -1558,9 +1328,9 @@ section {
 </footer>
 
 
-<!-- ====================================================== -->
+<!-- ================================================= -->
 <!-- CONSULTATION MODAL -->
-<!-- ====================================================== -->
+<!-- ================================================= -->
 
 <div id="consultationModal" class="consultation-modal">
 
@@ -1573,166 +1343,76 @@ section {
       &times;
     </span>
 
-    <h2>
-      Book a Consultation
-    </h2>
+    <h2>Book a Consultation</h2>
 
-    <form
-      id="consultationForm"
-      onsubmit="sendToWhatsApp(event)"
-    >
+    <form id="consultationForm" onsubmit="sendToWhatsApp(event)">
 
-      <label for="c_name">Name *</label>
+      <label>Name *</label>
+      <input type="text" id="c_name" required>
 
-      <input
-        type="text"
-        id="c_name"
-        required
-      >
+      <label>Age *</label>
+      <input type="number" id="c_age" min="1" max="120" required>
 
-      <label for="c_age">Age *</label>
+      <label>Educational Qualification *</label>
 
-      <input
-        type="number"
-        id="c_age"
-        min="1"
-        max="120"
-        required
-      >
+      <select id="c_education" onchange="toggleEducationGroup()" required>
 
-      <label for="c_education">
-        Educational Qualification *
-      </label>
-
-      <select
-        id="c_education"
-        onchange="toggleEducationGroup()"
-        required
-      >
-
-        <option value="">
-          Select Qualification
-        </option>
-
-        <option value="Below 10th">
-          Below 10th
-        </option>
-
-        <option value="10th Standard">
-          10th Standard
-        </option>
-
-        <option value="12th Standard">
-          12th Standard
-        </option>
-
-        <option value="Undergraduate">
-          Undergraduate
-        </option>
-
-        <option value="Postgraduate">
-          Postgraduate
-        </option>
-
-        <option value="Other">
-          Other
-        </option>
+        <option value="">Select Qualification</option>
+        <option value="Below 10th">Below 10th</option>
+        <option value="10th Standard">10th Standard</option>
+        <option value="12th Standard">12th Standard</option>
+        <option value="Undergraduate">Undergraduate</option>
+        <option value="Postgraduate">Postgraduate</option>
+        <option value="Other">Other</option>
 
       </select>
 
-      <div
-        id="groupFieldContainer"
-        style="display:none;"
-      >
+      <div id="groupFieldContainer" style="display:none;">
 
-        <label for="c_group">
-          If above 12th, Mention Group/Major Studied *
-        </label>
+        <label>If above 12th, Mention Group/Major Studied *</label>
 
-        <input
-          type="text"
-          id="c_group"
-        >
+        <input type="text" id="c_group">
 
       </div>
 
-      <label for="c_domain">
-        Interested Domain (Optional)
-      </label>
+      <label>Interested Domain</label>
 
       <select id="c_domain">
 
-        <option value="">
-          Select Domain
-        </option>
-
-        <option value="Engineering">
-          Engineering
-        </option>
-
-        <option value="Nursing">
-          Nursing
-        </option>
-
-        <option value="Arts and Science">
-          Arts and Science
-        </option>
-
-        <option value="Other">
-          Other
-        </option>
+        <option value="">Select Domain</option>
+        <option value="Engineering">Engineering</option>
+        <option value="Nursing">Nursing</option>
+        <option value="Arts and Science">Arts and Science</option>
+        <option value="Other">Other</option>
 
       </select>
 
-      <label for="c_department">
-        Department in Interest
-      </label>
+      <label>Department in Interest</label>
 
       <input
         type="text"
         id="c_department"
-        placeholder="e.g., Computer Science, B.Sc Mathematics"
+        placeholder="e.g., Computer Science"
       >
 
-      <label for="c_govexams">
-        Interest in Government Exams?
-      </label>
+      <label>Interest in Government Exams?</label>
 
       <select id="c_govexams">
 
-        <option value="No">
-          No
-        </option>
-
-        <option value="Yes">
-          Yes
-        </option>
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
 
       </select>
 
-      <label for="c_address">
-        Address *
-      </label>
+      <label>Address *</label>
 
-      <textarea
-        id="c_address"
-        rows="2"
-        required
-      ></textarea>
+      <textarea id="c_address" rows="2" required></textarea>
 
-      <label for="c_phone">
-        Phone Number *
-      </label>
+      <label>Phone Number *</label>
 
-      <input
-        type="tel"
-        id="c_phone"
-        required
-      >
+      <input type="tel" id="c_phone" required>
 
-      <label for="c_message">
-        Say Your Words (Paragraph)
-      </label>
+      <label>Say Your Words</label>
 
       <textarea
         id="c_message"
@@ -1754,9 +1434,9 @@ section {
 </div>
 
 
-<!-- ====================================================== -->
+<!-- ================================================= -->
 <!-- FEEDBACK MENU -->
-<!-- ====================================================== -->
+<!-- ================================================= -->
 
 <div id="feedbackMenu" class="feedback-menu">
 
@@ -1769,9 +1449,7 @@ section {
       &times;
     </span>
 
-    <h2>
-      Feedbacks
-    </h2>
+    <h2>Feedbacks</h2>
 
     <button
       class="feedback-option"
@@ -1794,9 +1472,9 @@ section {
 </div>
 
 
-<!-- ====================================================== -->
-<!-- GIVE FEEDBACK MODAL -->
-<!-- ====================================================== -->
+<!-- ================================================= -->
+<!-- GIVE FEEDBACK -->
+<!-- ================================================= -->
 
 <div id="feedbackFormModal" class="feedback-form-modal">
 
@@ -1809,18 +1487,14 @@ section {
       &times;
     </span>
 
-    <h2>
-      Give Your Feedback
-    </h2>
+    <h2>Give Your Feedback</h2>
 
     <form
       id="feedbackForm"
       onsubmit="submitFeedback(event)"
     >
 
-      <label for="feedbackName">
-        Name *
-      </label>
+      <label>Name *</label>
 
       <input
         type="text"
@@ -1830,9 +1504,7 @@ section {
         required
       >
 
-      <label for="feedbackPhone">
-        Phone Number *
-      </label>
+      <label>Phone Number *</label>
 
       <input
         type="tel"
@@ -1842,9 +1514,7 @@ section {
         required
       >
 
-      <label for="feedbackMessage">
-        Your Feedback *
-      </label>
+      <label>Your Feedback *</label>
 
       <textarea
         id="feedbackMessage"
@@ -1874,9 +1544,9 @@ section {
 </div>
 
 
-<!-- ====================================================== -->
-<!-- SEE FEEDBACK MODAL -->
-<!-- ====================================================== -->
+<!-- ================================================= -->
+<!-- SEE FEEDBACKS -->
+<!-- ================================================= -->
 
 <div id="feedbackListModal" class="feedback-list-modal">
 
@@ -1889,9 +1559,7 @@ section {
       &times;
     </span>
 
-    <h2>
-      What People Say 💜
-    </h2>
+    <h2>What People Say 💜</h2>
 
     <div
       id="feedbackList"
@@ -1899,7 +1567,7 @@ section {
     >
 
       <div class="feedback-loading">
-        Click See Feedbacks to load feedback.
+        Loading feedbacks...
       </div>
 
     </div>
@@ -1909,15 +1577,117 @@ section {
 </div>
 
 
-<!-- ====================================================== -->
+<!-- ================================================= -->
+<!-- PARTICULAR FEEDBACK DETAILS -->
+<!-- ================================================= -->
+
+<div id="feedbackDetailsModal" class="feedback-details-modal">
+
+  <div class="feedback-details-content">
+
+    <span
+      class="close-btn"
+      onclick="closeFeedbackDetails()"
+    >
+      &times;
+    </span>
+
+    <h2>Feedback Details 💜</h2>
+
+
+    <div class="feedback-detail-box">
+
+      <span class="feedback-detail-label">
+        Feedback ID
+      </span>
+
+      <div
+        class="feedback-detail-value"
+        id="detailId"
+      >
+        -
+      </div>
+
+    </div>
+
+
+    <div class="feedback-detail-box">
+
+      <span class="feedback-detail-label">
+        Name
+      </span>
+
+      <div
+        class="feedback-detail-value"
+        id="detailName"
+      >
+        -
+      </div>
+
+    </div>
+
+
+    <div class="feedback-detail-box">
+
+      <span class="feedback-detail-label">
+        Phone Number
+      </span>
+
+      <div
+        class="feedback-detail-value"
+        id="detailPhone"
+      >
+        -
+      </div>
+
+    </div>
+
+
+    <div class="feedback-detail-box">
+
+      <span class="feedback-detail-label">
+        Submitted Date & Time
+      </span>
+
+      <div
+        class="feedback-detail-value"
+        id="detailDate"
+      >
+        -
+      </div>
+
+    </div>
+
+
+    <div class="feedback-detail-box">
+
+      <span class="feedback-detail-label">
+        Feedback
+      </span>
+
+      <div
+        class="feedback-detail-value feedback-detail-feedback"
+        id="detailFeedback"
+      >
+        -
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================================================= -->
 <!-- JAVASCRIPT -->
-<!-- ====================================================== -->
+<!-- ================================================= -->
 
 <script>
 
-/* ====================================================== */
-/* SUPABASE CONNECTION */
-/* ====================================================== */
+/* ================================================= */
+/* SUPABASE */
+/* ================================================= */
 
 const SUPABASE_URL =
   "https://grihylarnngutarlezdm.supabase.co";
@@ -1926,37 +1696,38 @@ const SUPABASE_PUBLISHABLE_KEY =
   "sb_publishable_Bbz2Ivx4EZ5GljQx1RFGVw_Ktag4lN0";
 
 
-/* ====================================================== */
-/* CONSULTATION MODAL */
-/* ====================================================== */
+/* ================================================= */
+/* CONSULTATION */
+/* ================================================= */
 
 function openConsultationModal() {
 
-  document.getElementById("consultationModal").style.display = "flex";
+  document.getElementById(
+    "consultationModal"
+  ).style.display = "flex";
 
 }
 
 function closeConsultationModal() {
 
-  document.getElementById("consultationModal").style.display = "none";
+  document.getElementById(
+    "consultationModal"
+  ).style.display = "none";
 
 }
 
-
-/* ====================================================== */
-/* EDUCATION GROUP */
-/* ====================================================== */
 
 function toggleEducationGroup() {
 
   const edu =
     document.getElementById("c_education").value;
 
-  const groupContainer =
+  const container =
     document.getElementById("groupFieldContainer");
 
-  const groupInput =
+  const input =
     document.getElementById("c_group");
+
 
   if (
     edu === "Undergraduate" ||
@@ -1964,23 +1735,19 @@ function toggleEducationGroup() {
     edu === "Other"
   ) {
 
-    groupContainer.style.display = "block";
-    groupInput.required = true;
+    container.style.display = "block";
+    input.required = true;
 
   } else {
 
-    groupContainer.style.display = "none";
-    groupInput.required = false;
-    groupInput.value = "";
+    container.style.display = "none";
+    input.required = false;
+    input.value = "";
 
   }
 
 }
 
-
-/* ====================================================== */
-/* SEND CONSULTATION TO WHATSAPP */
-/* ====================================================== */
 
 function sendToWhatsApp(event) {
 
@@ -2016,16 +1783,16 @@ function sendToWhatsApp(event) {
   const message =
     document.getElementById("c_message").value.trim() || "N/A";
 
+
   let text =
     `*New Consultation Request* 📝\n\n` +
+
     `*Name:* ${name}\n` +
     `*Age:* ${age}\n` +
     `*Education:* ${education}\n`;
 
   if (group) {
-
     text += `*Group/Major:* ${group}\n`;
-
   }
 
   text +=
@@ -2036,69 +1803,244 @@ function sendToWhatsApp(event) {
     `*Phone:* ${phone}\n` +
     `*Words:* ${message}`;
 
-  const encodedText =
-    encodeURIComponent(text);
 
   const whatsappUrl =
-    `https://wa.me/918807663840?text=${encodedText}`;
+    `https://wa.me/918807663840?text=${encodeURIComponent(text)}`;
 
   window.open(
     whatsappUrl,
-    "_blank",
-    "noopener,noreferrer"
+    "_blank"
   );
 
 }
 
 
-/* ====================================================== */
+/* ================================================= */
 /* FEEDBACK MENU */
-/* ====================================================== */
+/* ================================================= */
 
 function openFeedbackMenu() {
 
-  document.getElementById("feedbackMenu").style.display = "flex";
+  document.getElementById(
+    "feedbackMenu"
+  ).style.display = "flex";
 
 }
+
 
 function closeFeedbackMenu() {
 
-  document.getElementById("feedbackMenu").style.display = "none";
+  document.getElementById(
+    "feedbackMenu"
+  ).style.display = "none";
 
 }
 
 
-/* ====================================================== */
+/* ================================================= */
 /* GIVE FEEDBACK */
-/* ====================================================== */
+/* ================================================= */
 
 function openGiveFeedback() {
 
   closeFeedbackMenu();
 
-  document.getElementById("feedbackFormModal").style.display = "flex";
+  document.getElementById(
+    "feedbackFormModal"
+  ).style.display = "flex";
 
 }
+
 
 function closeGiveFeedback() {
 
-  document.getElementById("feedbackFormModal").style.display = "none";
+  document.getElementById(
+    "feedbackFormModal"
+  ).style.display = "none";
 
 }
 
 
-/* ====================================================== */
-/* SHOW STATUS */
-/* ====================================================== */
+/* ================================================= */
+/* SUBMIT FEEDBACK */
+/* ================================================= */
 
-function showFeedbackStatus(message, success) {
+async function submitFeedback(event) {
+
+  event.preventDefault();
+
+
+  const name =
+    document.getElementById(
+      "feedbackName"
+    ).value.trim();
+
+
+  const phone =
+    document.getElementById(
+      "feedbackPhone"
+    ).value.trim();
+
+
+  const feedback =
+    document.getElementById(
+      "feedbackMessage"
+    ).value.trim();
+
 
   const status =
-    document.getElementById("feedbackStatus");
+    document.getElementById(
+      "feedbackStatus"
+    );
 
-  status.style.display = "block";
 
-  status.textContent = message;
+  const submitButton =
+    document.getElementById(
+      "feedbackSubmitBtn"
+    );
+
+
+  /* IMPORTANT VALIDATION */
+
+  if (
+    name === "" ||
+    phone === "" ||
+    feedback === ""
+  ) {
+
+    showFeedbackStatus(
+      "Please fill all required fields.",
+      false
+    );
+
+    return;
+
+  }
+
+
+  submitButton.disabled = true;
+
+  submitButton.textContent =
+    "Submitting...";
+
+
+  try {
+
+    const response =
+      await fetch(
+        `${SUPABASE_URL}/rest/v1/feedbacks`,
+        {
+
+          method: "POST",
+
+          headers: {
+
+            "Content-Type":
+              "application/json",
+
+            "apikey":
+              SUPABASE_PUBLISHABLE_KEY,
+
+            "Authorization":
+              `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+
+            "Prefer":
+              "return=minimal"
+
+          },
+
+          body: JSON.stringify({
+
+            name: name,
+
+            phone: phone,
+
+            feedback: feedback
+
+          })
+
+        }
+      );
+
+
+    if (!response.ok) {
+
+      const errorText =
+        await response.text();
+
+      console.error(
+        "Supabase error:",
+        errorText
+      );
+
+      throw new Error(
+        "Unable to save feedback."
+      );
+
+    }
+
+
+    showFeedbackStatus(
+      "Feedback submitted successfully! ❤️",
+      true
+    );
+
+
+    document.getElementById(
+      "feedbackForm"
+    ).reset();
+
+
+    setTimeout(() => {
+
+      closeGiveFeedback();
+
+    }, 1500);
+
+
+  } catch (error) {
+
+    console.error(error);
+
+    showFeedbackStatus(
+      "Could not save feedback. Please try again.",
+      false
+    );
+
+  } finally {
+
+    submitButton.disabled = false;
+
+    submitButton.textContent =
+      "Submit Feedback 🚀";
+
+  }
+
+}
+
+
+/* ================================================= */
+/* STATUS */
+/* ================================================= */
+
+function showFeedbackStatus(
+  message,
+  success
+) {
+
+  const status =
+    document.getElementById(
+      "feedbackStatus"
+    );
+
+
+  status.style.display =
+    "block";
+
+
+  status.textContent =
+    message;
+
 
   if (success) {
 
@@ -2127,136 +2069,25 @@ function showFeedbackStatus(message, success) {
 }
 
 
-/* ====================================================== */
-/* SUBMIT FEEDBACK */
-/* ====================================================== */
-
-async function submitFeedback(event) {
-
-  event.preventDefault();
-
-  const name =
-    document.getElementById("feedbackName").value.trim();
-
-  const phone =
-    document.getElementById("feedbackPhone").value.trim();
-
-  const feedback =
-    document.getElementById("feedbackMessage").value.trim();
-
-  const submitButton =
-    document.getElementById("feedbackSubmitBtn");
-
-  if (!name || !phone || !feedback) {
-
-    showFeedbackStatus(
-      "Please fill all required fields.",
-      false
-    );
-
-    return;
-
-  }
-
-  submitButton.disabled = true;
-  submitButton.textContent = "Submitting...";
-
-  try {
-
-    const response =
-      await fetch(
-        `${SUPABASE_URL}/rest/v1/feedbacks`,
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json",
-
-            "apikey":
-              SUPABASE_PUBLISHABLE_KEY,
-
-            "Authorization":
-              `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
-
-            "Prefer":
-              "return=minimal"
-          },
-
-          body: JSON.stringify({
-            name: name,
-            phone: phone,
-            feedback: feedback
-          })
-        }
-      );
-
-    if (!response.ok) {
-
-      const errorText =
-        await response.text();
-
-      console.error(
-        "Supabase INSERT error:",
-        errorText
-      );
-
-      throw new Error(errorText);
-
-    }
-
-    showFeedbackStatus(
-      "Feedback submitted successfully! ❤️",
-      true
-    );
-
-    document
-      .getElementById("feedbackForm")
-      .reset();
-
-    setTimeout(() => {
-
-      closeGiveFeedback();
-
-    }, 1500);
-
-  } catch (error) {
-
-    console.error(
-      "Feedback submission error:",
-      error
-    );
-
-    showFeedbackStatus(
-      "Could not save feedback. Check your Supabase RLS policies.",
-      false
-    );
-
-  } finally {
-
-    submitButton.disabled = false;
-
-    submitButton.textContent =
-      "Submit Feedback 🚀";
-
-  }
-
-}
-
-
-/* ====================================================== */
+/* ================================================= */
 /* SEE FEEDBACKS */
-/* ====================================================== */
+/* ================================================= */
 
 async function openSeeFeedbacks() {
 
   closeFeedbackMenu();
 
+
   document.getElementById(
     "feedbackListModal"
   ).style.display = "flex";
 
+
   const feedbackList =
-    document.getElementById("feedbackList");
+    document.getElementById(
+      "feedbackList"
+    );
+
 
   feedbackList.innerHTML = `
     <div class="feedback-loading">
@@ -2264,23 +2095,39 @@ async function openSeeFeedbacks() {
     </div>
   `;
 
+
   try {
+
+    /*
+      IMPORTANT:
+      We are now fetching:
+      id
+      name
+      phone
+      feedback
+      created_at
+    */
 
     const response =
       await fetch(
-        `${SUPABASE_URL}/rest/v1/feedbacks?select=name,feedback,created_at&order=created_at.desc`,
+        `${SUPABASE_URL}/rest/v1/feedbacks?select=id,name,phone,feedback,created_at&order=created_at.desc`,
         {
+
           method: "GET",
 
           headers: {
+
             "apikey":
               SUPABASE_PUBLISHABLE_KEY,
 
             "Authorization":
               `Bearer ${SUPABASE_PUBLISHABLE_KEY}`
+
           }
+
         }
       );
+
 
     if (!response.ok) {
 
@@ -2288,16 +2135,20 @@ async function openSeeFeedbacks() {
         await response.text();
 
       console.error(
-        "Supabase SELECT error:",
+        "Supabase error:",
         errorText
       );
 
-      throw new Error(errorText);
+      throw new Error(
+        "Unable to load feedbacks."
+      );
 
     }
 
+
     const feedbacks =
       await response.json();
+
 
     if (
       !feedbacks ||
@@ -2316,83 +2167,157 @@ async function openSeeFeedbacks() {
 
     }
 
+
     feedbackList.innerHTML = "";
 
-    feedbacks.forEach(item => {
 
-      const card =
-        document.createElement("div");
-
-      card.className =
-        "feedback-card";
+    feedbacks.forEach(
+      item => {
 
 
-      const name =
-        document.createElement("div");
+        /* CREATE CARD */
 
-      name.className =
-        "feedback-card-name";
-
-      name.textContent =
-        item.name || "Anonymous";
-
-
-      const date =
-        document.createElement("div");
-
-      date.className =
-        "feedback-card-date";
-
-      if (item.created_at) {
-
-        const dateObject =
-          new Date(item.created_at);
-
-        date.textContent =
-          dateObject.toLocaleDateString(
-            "en-IN",
-            {
-              day: "numeric",
-              month: "short",
-              year: "numeric"
-            }
+        const card =
+          document.createElement(
+            "div"
           );
 
+
+        card.className =
+          "feedback-card";
+
+
+        /*
+          THIS IS THE IMPORTANT PART.
+
+          Double-clicking this particular card
+          opens ONLY this feedback's details.
+        */
+
+        card.addEventListener(
+          "dblclick",
+          function() {
+
+            openFeedbackDetails(item);
+
+          }
+        );
+
+
+        /* NAME */
+
+        const name =
+          document.createElement(
+            "div"
+          );
+
+        name.className =
+          "feedback-card-name";
+
+        name.textContent =
+          item.name || "Anonymous";
+
+
+        /* DATE */
+
+        const date =
+          document.createElement(
+            "div"
+          );
+
+        date.className =
+          "feedback-card-date";
+
+
+        if (item.created_at) {
+
+          const dateObject =
+            new Date(
+              item.created_at
+            );
+
+
+          date.textContent =
+            dateObject.toLocaleString(
+              "en-IN",
+              {
+
+                day: "numeric",
+
+                month: "short",
+
+                year: "numeric",
+
+                hour: "2-digit",
+
+                minute: "2-digit"
+
+              }
+            );
+
+        } else {
+
+          date.textContent =
+            "Date unavailable";
+
+        }
+
+
+        /* FEEDBACK TEXT */
+
+        const text =
+          document.createElement(
+            "div"
+          );
+
+        text.className =
+          "feedback-card-text";
+
+        text.textContent =
+          item.feedback || "";
+
+
+        /* HINT */
+
+        const hint =
+          document.createElement(
+            "div"
+          );
+
+        hint.className =
+          "feedback-card-hint";
+
+        hint.textContent =
+          "Double-click to view details";
+
+
+        /* ADD EVERYTHING */
+
+        card.appendChild(name);
+
+        card.appendChild(date);
+
+        card.appendChild(text);
+
+        card.appendChild(hint);
+
+
+        feedbackList.appendChild(card);
+
       }
+    );
 
-
-      const text =
-        document.createElement("div");
-
-      text.className =
-        "feedback-card-text";
-
-      text.textContent =
-        item.feedback || "";
-
-
-      card.appendChild(name);
-
-      card.appendChild(date);
-
-      card.appendChild(text);
-
-      feedbackList.appendChild(card);
-
-    });
 
   } catch (error) {
 
-    console.error(
-      "Feedback loading error:",
-      error
-    );
+    console.error(error);
+
 
     feedbackList.innerHTML = `
       <div class="feedback-empty">
         ❌ Unable to load feedbacks.
         <br><br>
-        Check your Supabase table and RLS policies.
+        Please check your Supabase table and settings.
       </div>
     `;
 
@@ -2401,83 +2326,264 @@ async function openSeeFeedbacks() {
 }
 
 
-function closeSeeFeedbacks() {
+/* ================================================= */
+/* OPEN PARTICULAR FEEDBACK DETAILS */
+/* ================================================= */
+
+function openFeedbackDetails(item) {
+
+  /*
+    The 'item' here is ONLY the feedback
+    that the user double-clicked.
+  */
+
+
+  document.getElementById(
+    "detailId"
+  ).textContent =
+    item.id || "N/A";
+
+
+  document.getElementById(
+    "detailName"
+  ).textContent =
+    item.name || "Anonymous";
+
+
+  document.getElementById(
+    "detailPhone"
+  ).textContent =
+    item.phone || "N/A";
+
+
+  document.getElementById(
+    "detailFeedback"
+  ).textContent =
+    item.feedback || "No feedback";
+
+
+  /* DATE + TIME */
+
+  if (item.created_at) {
+
+    const dateObject =
+      new Date(
+        item.created_at
+      );
+
+
+    document.getElementById(
+      "detailDate"
+    ).textContent =
+
+      dateObject.toLocaleString(
+        "en-IN",
+        {
+
+          day: "numeric",
+
+          month: "long",
+
+          year: "numeric",
+
+          hour: "2-digit",
+
+          minute: "2-digit",
+
+          second: "2-digit"
+
+        }
+      );
+
+  } else {
+
+    document.getElementById(
+      "detailDate"
+    ).textContent =
+      "N/A";
+
+  }
+
+
+  /*
+    Close the list first so that
+    only the details popup is visible.
+  */
 
   document.getElementById(
     "feedbackListModal"
-  ).style.display = "none";
+  ).style.display =
+    "none";
+
+
+  /* Open details */
+
+  document.getElementById(
+    "feedbackDetailsModal"
+  ).style.display =
+    "flex";
 
 }
 
 
-/* ====================================================== */
-/* CLOSE WHEN CLICKING OUTSIDE */
-/* ====================================================== */
+/* ================================================= */
+/* CLOSE FEEDBACK DETAILS */
+/* ================================================= */
 
-window.addEventListener("click", function(event) {
+function closeFeedbackDetails() {
 
-  const consultationModal =
-    document.getElementById("consultationModal");
-
-  const feedbackMenu =
-    document.getElementById("feedbackMenu");
-
-  const feedbackFormModal =
-    document.getElementById("feedbackFormModal");
-
-  const feedbackListModal =
-    document.getElementById("feedbackListModal");
+  document.getElementById(
+    "feedbackDetailsModal"
+  ).style.display =
+    "none";
 
 
-  if (event.target === consultationModal) {
+  /*
+    Open the feedback list again
+    when details are closed.
+  */
 
-    closeConsultationModal();
+  document.getElementById(
+    "feedbackListModal"
+  ).style.display =
+    "flex";
+
+}
+
+
+/* ================================================= */
+/* CLOSE SEE FEEDBACKS */
+/* ================================================= */
+
+function closeSeeFeedbacks() {
+
+  document.getElementById(
+    "feedbackListModal"
+  ).style.display =
+    "none";
+
+}
+
+
+/* ================================================= */
+/* CLICK OUTSIDE MODALS */
+/* ================================================= */
+
+window.addEventListener(
+  "click",
+  function(event) {
+
+
+    const consultationModal =
+      document.getElementById(
+        "consultationModal"
+      );
+
+
+    const feedbackMenu =
+      document.getElementById(
+        "feedbackMenu"
+      );
+
+
+    const feedbackFormModal =
+      document.getElementById(
+        "feedbackFormModal"
+      );
+
+
+    const feedbackListModal =
+      document.getElementById(
+        "feedbackListModal"
+      );
+
+
+    const feedbackDetailsModal =
+      document.getElementById(
+        "feedbackDetailsModal"
+      );
+
+
+    if (
+      event.target ===
+      consultationModal
+    ) {
+
+      closeConsultationModal();
+
+    }
+
+
+    if (
+      event.target ===
+      feedbackMenu
+    ) {
+
+      closeFeedbackMenu();
+
+    }
+
+
+    if (
+      event.target ===
+      feedbackFormModal
+    ) {
+
+      closeGiveFeedback();
+
+    }
+
+
+    if (
+      event.target ===
+      feedbackListModal
+    ) {
+
+      closeSeeFeedbacks();
+
+    }
+
+
+    if (
+      event.target ===
+      feedbackDetailsModal
+    ) {
+
+      closeFeedbackDetails();
+
+    }
 
   }
+);
 
 
-  if (event.target === feedbackMenu) {
-
-    closeFeedbackMenu();
-
-  }
-
-
-  if (event.target === feedbackFormModal) {
-
-    closeGiveFeedback();
-
-  }
-
-
-  if (event.target === feedbackListModal) {
-
-    closeSeeFeedbacks();
-
-  }
-
-});
-
-
-/* ====================================================== */
+/* ================================================= */
 /* ESC KEY */
-/* ====================================================== */
+/* ================================================= */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+  "keydown",
+  function(event) {
 
-  if (event.key === "Escape") {
+    if (event.key === "Escape") {
 
-    closeConsultationModal();
+      closeConsultationModal();
 
-    closeFeedbackMenu();
+      closeFeedbackMenu();
 
-    closeGiveFeedback();
+      closeGiveFeedback();
 
-    closeSeeFeedbacks();
+      closeSeeFeedbacks();
+
+      document.getElementById(
+        "feedbackDetailsModal"
+      ).style.display =
+        "none";
+
+    }
 
   }
-
-});
+);
 
 </script>
 
